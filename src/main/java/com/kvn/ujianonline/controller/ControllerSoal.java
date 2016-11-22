@@ -49,36 +49,13 @@ public class ControllerSoal {
 		return "/userview/pagelogin";
 	}
 	
-//	@RequestMapping(value="/userview/waiting", method=RequestMethod.POST)
-//	public String openWaitingPage(@RequestParam("username") String username,
-//			@RequestParam("password") String password,
-//			HttpServletRequest request,
-//			Model model){
-//		UserAccount user = DataContainer.getInstance().getDaoUserAccount().getByUsername(username);
-//		// Check if there is desired user
-//		if( user != null ){
-//			// Check if username match the password
-//			if(user.getPassword().equals(password)){
-//				// Save username and password to session
-//				HttpSession session = request.getSession();
-//				session.setAttribute("username", username);
-//				session.setAttribute("password", password);
-//				
-//				model.addAttribute("username", username);
-//				model.addAttribute("nidn", user.getSiswa().getNidn());
-//				model.addAttribute("currenttime", TimeInfo.getCurrentTime());
-//				return "/userview/pagewaiting";
-//			}
-//		}
-//		return "/";
-//	}
-	
 	@RequestMapping(value="/userview/soal")
 	public String openSoal(HttpServletRequest request,
 			Model model){
 		HttpSession session = request.getSession();
 		String nidn = (String)session.getAttribute("nidn");
 		model.addAttribute("nidn", nidn);
+		model.addAttribute("soal1", DataContainer.getInstance().getDaoSoal().getById(1));
 		return "/userview/pagesoal";
 	}
 }
