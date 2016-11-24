@@ -68,7 +68,7 @@ public class ControllerSoal {
 		return "/userview/pagesoal";
 	}
 	
-	@RequestMapping(value="soaljson/{no_soal}")
+	@RequestMapping(value="/soaljson/{no_soal}")
 	@ResponseBody
 	public Soal getSoal(@PathVariable Long no_soal){
 //		return DataContainer.getInstance().getDaoSoal().getById(noSoal);
