@@ -22,19 +22,19 @@ public class DemoApplication {
 		DataContainer.getInstance().getDaoUserAccount().getById(1).setSiswa(DataContainer.getInstance().getDaoSiswa().getById("1"));
 		DataContainer.getInstance().getDaoUserAccount().getById(2).setSiswa(DataContainer.getInstance().getDaoSiswa().getById("2"));
 		
-		DataContainer.getInstance().getDaoSoal().save(new Soal(
-				"Di manakah ibunda raja Michael berada ketika raja Michael sedang berburu domba di padang belantara emoji?", 
-				"Kamar mandi", 
-				"Atas pagar", 
-				"Belakang pintu", 
-				"Bawah meja", 
-				"Atas pohon"));
-		DataContainer.getInstance().getDaoSoal().save(new Soal(
-				"Mengapa paramita tertimpa permen coklat padahal sedang hujan nasi?", 
-				"Karena coklat terbuat dari nasi", 
-				"Karena nasi berevolusi menjadi coklat", 
-				"Karena terjadi interaksi antara nasi dan ladang gandum", 
-				"Karena koko kranch sedang shoting film", 
-				"Karena paramita sedang bermimpi coklat"));
+//		DataContainer.getInstance().getDaoSoal().save(new Soal(
+//				"Di manakah ibunda raja Michael berada ketika raja Michael sedang berburu domba di padang belantara emoji?", 
+//				"Kamar mandi", 
+//				"Atas pagar", 
+//				"Belakang pintu", 
+//				"Bawah meja", 
+//				"Atas pohon"));
+//		DataContainer.getInstance().getDaoSoal().save(new Soal(
+//				"Mengapa paramita tertimpa permen coklat padahal sedang hujan nasi?", 
+//				"Karena coklat terbuat dari nasi", 
+//				"Karena nasi berevolusi menjadi coklat", 
+//				"Karena terjadi interaksi antara nasi dan ladang gandum", 
+//				"Karena koko kranch sedang shoting film", 
+//				"Karena paramita sedang bermimpi coklat"));
 	}
 }

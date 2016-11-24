@@ -13,7 +13,7 @@ public class DataContainer {
 	public DataContainer(){
 		daoSiswa = new DaoSiswa();
 		daoUserAccount = new DaoUserAccount();
-		daoSoal = new DaoSoal();
+//		daoSoal = new DaoSoal();
 	}
 	
 	public static DataContainer getInstance(){
