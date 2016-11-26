@@ -25,7 +25,7 @@ public class Soal {
 	private int id_mapel;
 	
 	@Lob
-	private Long soal;
+	private String soal;
 	
 	@Column
 	private String path_gmb;
