@@ -64,15 +64,13 @@ public class ControllerSoal {
 		HttpSession session = request.getSession();
 		String nidn = (String)session.getAttribute("nidn");
 		model.addAttribute("nidn", nidn);
-//		model.addAttribute("soal1", DataContainer.getInstance().getDaoSoal().getById(1));
 		return "/userview/pagesoal";
 	}
 	
-	@RequestMapping(value="/soaljson/{no_soal}")
+	@RequestMapping(value="/soaljson/{id_soal}")
 	@ResponseBody
-	public Soal getSoal(@PathVariable Long no_soal){
-//		return DataContainer.getInstance().getDaoSoal().getById(noSoal);
-		Soal soal = daoSoal.findOne(no_soal);
+	public Soal getSoal(@PathVariable Long id_soal){
+		Soal soal = daoSoal.findOne(id_soal);
 		return soal;
 	}
 }
