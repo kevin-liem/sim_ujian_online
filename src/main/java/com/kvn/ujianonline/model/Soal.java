@@ -19,15 +19,22 @@ import lombok.Setter;
 public class Soal {
 	@Id
 	@GeneratedValue
+<<<<<<< HEAD
 	private Long id_soal;
 	
 	@Column
+=======
+	private int id_soal;
+	
+	@Id
+>>>>>>> 5f8255697cfa28ec5c1fb6c7fe9c5959d153b528
 	private int id_mapel;
 	
 	@Lob
 	private String soal;
 	
 	@Column
+<<<<<<< HEAD
 	private String path_gmb;
 	
 	@Column
@@ -53,6 +60,24 @@ public class Soal {
 	
 	
 	
+=======
+	private long jwb_A;
+	
+	@Column
+	private long jwb_B;
+	
+	@Column
+	private long jwb_C;
+	
+	@Column
+	private long jwb_D;
+	
+	@Column
+	private long jwb_E;
+	
+	@Column
+	private int kunci;
+>>>>>>> 5f8255697cfa28ec5c1fb6c7fe9c5959d153b528
 	
 	
 	
