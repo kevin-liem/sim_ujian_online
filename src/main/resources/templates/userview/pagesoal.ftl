@@ -5,7 +5,8 @@
 <title>Soal</title>
 </head>
 <body>
-	<div class="soal" id="soal">1. ${soal.soal}</div>
+	<div class="soal" id="soal">${soal.id_soal} <#if soal.path_gmb??><img src="/${soal.path_gmb}" /></#if></div>
+	<div class="soal" id="soal">${soal.soal}</div>
 	<div class="pilihan" id="jwb_a">A. ${soal.jwb_a}</div>
 	<div class="pilihan" id="jwb_b">B. ${soal.jwb_b}</div>
 	<div class="pilihan" id="jwb_c">C. ${soal.jwb_c}</div>
@@ -24,13 +25,14 @@
 	   			id_soal += 1;
 	   		else
 	   			return;
-	   			
+
     		$.ajax({
     			url:"/soaljson/" + id_soal,
     			method:"GET",
     			success:function(response){
     				console.log(response);
-    				$("#soal").text(id_soal + ". " + response.soal);
+                    $("#soal").text(id_soal + ". " + response.path_gmb);
+    				$("#soal").text(response.soal);
     				$("#jwb_a").text("A. " + response.jwb_a);
     				$("#jwb_b").text("B. " + response.jwb_b);
     				$("#jwb_c").text("C. " + response.jwb_c);
@@ -52,7 +54,8 @@
     			method:"GET",
     			success:function(response){
     				console.log(response);
-    				$("#soal").text(id_soal + ". " + response.soal);
+                    $("#soal").text(id_soal + ". " + response.path_gmb);
+                    $("#soal").text(response.soal);
     				$("#jwb_a").text("A. " + response.jwb_a);
     				$("#jwb_b").text("B. " + response.jwb_b);
     				$("#jwb_c").text("C. " + response.jwb_c);

@@ -65,7 +65,7 @@ public class ControllerSoal {
 		String nidn = (String)session.getAttribute("nidn");
 		model.addAttribute("nidn", nidn);
 		
-		Soal soal = daoSoal.findOne(Long.valueOf(1));
+		Soal soal = daoSoal.findOne(Long.valueOf(12));
 		model.addAttribute(soal);
 		return "/userview/pagesoal";
 	}
