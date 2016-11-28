@@ -67,7 +67,7 @@ public class ControllerSoal {
 		
 		Soal soal = daoSoal.findOne(Long.valueOf(12));
 		model.addAttribute(soal);
-		return "/userview/pagesoal";
+		return "/userview/soal";
 	}
 	
 	@RequestMapping(value="/soaljson/{id_soal}")
