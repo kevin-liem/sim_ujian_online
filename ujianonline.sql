@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2016 at 10:38 AM
+-- Generation Time: Nov 29, 2016 at 05:09 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jadwal`
+--
+
+CREATE TABLE IF NOT EXISTS `jadwal` (
+  `id` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jam` time NOT NULL,
+  `id_mapel` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lognilai`
 --
 
@@ -32,13 +45,6 @@ CREATE TABLE IF NOT EXISTS `lognilai` (
   `id_user` int(11) DEFAULT NULL,
   `nilai` int(11) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `lognilai`
---
-
-INSERT INTO `lognilai` (`id_log`, `id_mapel`, `id_user`, `nilai`) VALUES
-(1, 4, 1, 90);
 
 -- --------------------------------------------------------
 
@@ -191,21 +197,30 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id_user` bigint(20) NOT NULL,
   `nisn` int(11) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `hak_akses` int(1) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `Jurusan` varchar(3) NOT NULL,
+  `status_siswa` int(1) NOT NULL,
+  `status_ujian` int(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nisn`, `password`, `status`, `username`) VALUES
-(1, 2103141057, 'novan', 2, 'novan'),
-(2, NULL, 'admin', 1, 'admin');
+INSERT INTO `user` (`id_user`, `nisn`, `password`, `hak_akses`, `username`, `Jurusan`, `status_siswa`, `status_ujian`) VALUES
+(3, 2103141057, 'tes', 2, 'Novan Andhy Trianto', 'IPA', 1, 0),
+(4, NULL, 'admin', NULL, 'admin', '', 0, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lognilai`
@@ -236,6 +251,11 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `lognilai`
 --
 ALTER TABLE `lognilai`
@@ -254,7 +274,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
