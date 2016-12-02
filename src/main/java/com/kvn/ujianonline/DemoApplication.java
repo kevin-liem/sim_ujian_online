@@ -3,8 +3,9 @@ package com.kvn.ujianonline;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.kvn.ujianonline.model.nilai;
-import com.kvn.ujianonline.model.siswa;
+import com.kvn.ujianonline.model.Nilai;
+import com.kvn.ujianonline.model.Siswa;
+import com.kvn.ujianonline.model.Soal;
 import com.kvn.ujianonline.model.UserAccount;
 
 @SpringBootApplication
@@ -12,10 +13,10 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		DataContainer.getInstance().getDaoSiswa().save(new siswa("Kevin"));
-		DataContainer.getInstance().getDaoSiswa().save(new siswa("Novi"));
-		DataContainer.getInstance().getDaoSiswa().getById("1").setNilai(new nilai(56, 44, 90));
-		DataContainer.getInstance().getDaoSiswa().getById("2").setNilai(new nilai(100, 34, 80));
+		DataContainer.getInstance().getDaoSiswa().save(new Siswa("Kevin"));
+		DataContainer.getInstance().getDaoSiswa().save(new Siswa("Novi"));
+		DataContainer.getInstance().getDaoSiswa().getById("1").setNilai(new Nilai(56, 44, 90));
+		DataContainer.getInstance().getDaoSiswa().getById("2").setNilai(new Nilai(100, 34, 80));
 		DataContainer.getInstance().getDaoUserAccount().save(new UserAccount("kevinandrean", "kevinandrean"));
 		DataContainer.getInstance().getDaoUserAccount().save(new UserAccount("n", "n"));
 		DataContainer.getInstance().getDaoUserAccount().getById(1).setSiswa(DataContainer.getInstance().getDaoSiswa().getById("1"));

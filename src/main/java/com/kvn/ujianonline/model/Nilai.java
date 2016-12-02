@@ -1,17 +1,17 @@
 package com.kvn.ujianonline.model;
 
-public class nilai {
+public class Nilai {
 	private int bhsIndonesia;
 	private int bhsInggris;
 	private int matematika;
 	
 	private int jmlPelajaran = 3;
 	
-	public nilai() {
+	public Nilai() {
 		
 	}
 
-	public nilai(int bhsIndonesia, int bhsInggris, int matematika) {
+	public Nilai(int bhsIndonesia, int bhsInggris, int matematika) {
 		super();
 		this.bhsIndonesia = bhsIndonesia;
 		this.bhsInggris = bhsInggris;
