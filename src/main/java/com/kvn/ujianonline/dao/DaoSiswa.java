@@ -3,26 +3,26 @@ package com.kvn.ujianonline.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kvn.ujianonline.model.Siswa;
+import com.kvn.ujianonline.model.siswa;
 
 public class DaoSiswa {
-	private List<Siswa> listSiswa = new ArrayList<Siswa>();
+	private List<siswa> listSiswa = new ArrayList<siswa>();
 	
 	public DaoSiswa(){
 		
 	}
 	
-	public void save(Siswa siswa){
+	public void save(siswa siswa){
 		siswa.setNidn("" + (listSiswa.size()+1));
 		listSiswa.add(siswa);
 	}
 	
-	public List<Siswa> getAll(){
+	public List<siswa> getAll(){
 		return listSiswa;
 	}
 	
-	public Siswa getById(String siswaNidn){
-		for (Siswa siswa : listSiswa) {
+	public siswa getById(String siswaNidn){
+		for (com.kvn.ujianonline.model.siswa siswa : listSiswa) {
 			if(siswaNidn.equals(siswa.getNidn())){
 				return siswa;
 			}

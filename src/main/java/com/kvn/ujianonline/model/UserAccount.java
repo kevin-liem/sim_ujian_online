@@ -4,7 +4,7 @@ public class UserAccount {
 	private int id;
 	private String username;
 	private String password;
-	private Siswa siswa;
+	private com.kvn.ujianonline.model.siswa siswa;
 	
 	public UserAccount(String username, String password) {
 		super();
@@ -36,11 +36,11 @@ public class UserAccount {
 		this.password = password;
 	}
 
-	public Siswa getSiswa() {
+	public com.kvn.ujianonline.model.siswa getSiswa() {
 		return siswa;
 	}
 
-	public void setSiswa(Siswa siswa) {
+	public void setSiswa(com.kvn.ujianonline.model.siswa siswa) {
 		this.siswa = siswa;
 	}
 }

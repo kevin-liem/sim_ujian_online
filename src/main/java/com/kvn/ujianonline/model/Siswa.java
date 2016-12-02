@@ -1,11 +1,11 @@
 package com.kvn.ujianonline.model;
 
-public class Siswa {
+public class siswa {
 	private String nidn;
 	private String nama;
-	private Nilai nilai;
+	private com.kvn.ujianonline.model.nilai nilai;
 
-	public Siswa(String nama) {
+	public siswa(String nama) {
 //		super();
 		this.nama = nama;
 	}
@@ -22,11 +22,11 @@ public class Siswa {
 		this.nama = nama;
 	}
 
-	public Nilai getNilai() {
+	public com.kvn.ujianonline.model.nilai getNilai() {
 		return nilai;
 	}
 
-	public void setNilai(Nilai nilai) {
+	public void setNilai(com.kvn.ujianonline.model.nilai nilai) {
 		this.nilai = nilai;
 	}
 }
