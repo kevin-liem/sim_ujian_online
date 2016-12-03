@@ -11,7 +11,7 @@
 	<div id="page">
 		<div id="header">
 			<div>
-				<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+				<a href="/" class="logo"><img src="images/logo.png" alt=""></a>
 				<center><h1>UJIAN ONLINE NASIONAL SMA<h1></center>
 			</div>
 		</div>
