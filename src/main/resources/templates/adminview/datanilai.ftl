@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/adminview/overview">Admin</a>
+                <a class="navbar-brand" href="/admin">Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">  
@@ -48,27 +48,27 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li >
-                        <a href="/adminview/overview"><i class="fa fa-fw fa-dashboard"></i> Overview</a>
+                    <li>
+                        <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Overview</a>
                     </li>
 
-                    <li >
-                        <a href="/adminview/datasiswa"><i class="glyphicon glyphicon-user"></i> Data Siswa</a>
+                    <li>
+                        <a href="/admin/data-siswa"><i class="glyphicon glyphicon-user"></i> Data Siswa</a>
                     </li>
 
                     <li class="active">
-                        <a href="/adminview/datanilai"><i class="fa fa-fw fa-table"></i> Data Nilai Siswa</a>
+                        <a href="/admin/data-nilai"><i class="fa fa-fw fa-table"></i> Data Nilai Siswa</a>
                     </li>
 
                     <li>
-                        <a href="/adminview/soal"><i class="fa fa-fw fa-file"></i> Soal</a>
+                        <a href="/admin/soal"><i class="fa fa-fw fa-file"></i> Soal</a>
                     </li>
                     <li>
-                        <a href="/adminview/regulasi"><i class="glyphicon glyphicon-option-vertical"></i> Regulasi</a>
+                        <a href="/admin/regulasi"><i class="glyphicon glyphicon-option-vertical"></i> Regulasi</a>
                     </li>
-                    <li>
-                        <a href="/adminview/jadwalujian"><i class="glyphicon glyphicon-calendar"></i> Waktu Ujian</a>
-                    </li>  
+                    <li >
+                        <a href="/admin/jadwal"><i class="glyphicon glyphicon-calendar"></i> Waktu Ujian</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
