@@ -1,46 +1,94 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ujian Online</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css">
-	<script src="js/mobile.js" type="text/javascript"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Ujian Online Tingkat SMA</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+
 </head>
+
 <body>
-	<div id="page">
-		<div id="header">
-			<div>
-				<a href="/" class="logo"><img src="images/logo.png" alt=""></a>
-				<center><h1>UJIAN ONLINE NASIONAL SMA<h1></center>
-			</div>
-		</div>
-		<div id="body" class="contact">
-			<div class="header">
-				<div>
-					<h1></h1>
-				</div>
-			</div>
-			<div class="footer">
-				<div class="contact">
-					<center><h1>Login</h1></center>
-					<form action="/" method="post">
-						<input type="text" name="username" placeholder="Username" onblur="this.value=!this.value?'Name':this.value;" onfocus="this.select()" onclick="this.value='';">
-						<input type="password" name="password" placeholder="Password" onblur="this.value=!this.value?'Email':this.value;" onfocus="this.select()" onclick="this.value='';">
-						<input type="submit" value="Login" id="submit">
-					</form>
-				</div>
-				<div class="section">
-					<h1>Sukses UNAS</h1>
-					<p>Kalau kau menghargai prosesnya,Pasti hasilnya akan berharga</p>
-				</div>
-			</div>
-			<div class="header">
-				<div>
-					<h1></h1>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<!-- Top content -->
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row top-title">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1 style="text-shadow: 3px 3px 6px #000000;"><strong>Ujian Online</strong> Tingkat SMA</h1>
+                    <div class="description">
+                        <p style="text-shadow: 3px 3px 6px #000000;">
+                            Selamat datang di Aplikasi <strong>Ujian Online</strong> Tingkat SMA
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Silahkan Login</h3>
+                            <p>Masukkan NISN dan Password Anda</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" action="/" method="post" class="login-form">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">NISN</label>
+                                <input type="text" name="username" style="text-align: center;" placeholder="Username" class="form-username form-control" id="form-username">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-password">Kata Sandi</label>
+                                <input type="password" name="password" style="text-align: center;" placeholder="Kata Sandi" class="form-password form-control" id="form-password">
+                            </div>
+                            <button type="submit" class="btn1">Masuk</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Javascript -->
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/scripts.js"></script>
+
+<!--[if lt IE 10]>
+<script src="/js/placeholder.js"></script>
+<![endif]-->
+
 </body>
+
 </html>
