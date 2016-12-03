@@ -29,14 +29,5 @@ public class user {
 	private int nisn;
 
 	@Column
-	private int status_siswa;
-
-	@Column
-	private int hak_akses;
-
-	@Column
-	private String jurusan;
-
-	@Column
-	private int status_ujian;
+	private int status;
 }

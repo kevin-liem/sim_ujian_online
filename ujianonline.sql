@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) DEFAULT NULL,
   `hak_akses` int(1) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
-  `jurusan` varchar(3) NOT NULL,
+  `Jurusan` varchar(3) NOT NULL,
   `status_siswa` int(1) NOT NULL,
   `status_ujian` int(1) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nisn`, `password`, `hak_akses`, `username`, `jurusan`, `status_siswa`, `status_ujian`) VALUES
+INSERT INTO `user` (`id_user`, `nisn`, `password`, `hak_akses`, `username`, `Jurusan`, `status_siswa`, `status_ujian`) VALUES
 (3, 2103141057, 'tes', 2, 'Novan Andhy Trianto', 'IPA', 1, 0),
 (4, NULL, 'admin', NULL, 'admin', '', 0, 0);
 
