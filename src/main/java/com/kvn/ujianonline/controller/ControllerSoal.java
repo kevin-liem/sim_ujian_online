@@ -48,6 +48,8 @@ public class ControllerSoal {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
+				session.setAttribute("nama", user.getSiswa().getNama());
+				session.setAttribute("nidn", user.getSiswa().getNidn());
 				
 				model.addAttribute("nama", user.getSiswa().getNama());
 				model.addAttribute("nidn", user.getSiswa().getNidn());
@@ -62,7 +64,9 @@ public class ControllerSoal {
 	public String openSoal(HttpServletRequest request,
 			Model model){
 		HttpSession session = request.getSession();
+		String nama = (String)session.getAttribute("nama");
 		String nidn = (String)session.getAttribute("nidn");
+		model.addAttribute("nama", nama);
 		model.addAttribute("nidn", nidn);
 		
 		Soal soal = daoSoal.findOne(Long.valueOf(12));
