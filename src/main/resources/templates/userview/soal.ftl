@@ -40,14 +40,13 @@
         <div class="container">
             <div class="row top-title">
                 <div class="col-sm-8 col-sm-offset-2 text">
-                    <h1 style="text-shadow: 3px 3px 6px #000000;"><strong>Ujian Online</strong> Tingkat SMA</h1>
-                    <h3 style="text-shadow: 3px 3px 6px #000000;"><strong>${nama}</strong></h3>
-                    <h3 style="text-shadow: 3px 3px 6px #000000;"><strong>PELAJARAN</strong></h3>
-                    <h2 style="text-shadow: 3px 3px 6px #000000;"><strong>47:29</strong></h2>
+                    <h1 style="color: #000;"><strong>Ujian Online</strong> Tingkat SMA</h1>
+                    <h3 style="color: #000;">Selamat Ujian <strong>${nama}</strong></h3>
+                    <h2 style="color: #000;"><strong>47:29</strong></h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 form-soal">
+                <div class="col-sm-12 form-soal well">
                     <div class="form-bottom">
                         <div class="form-list-soal">
                             <h3 style="text-align: center;">Soal <span id="nomersoal">${soal.id_soal}</span></h3>
@@ -87,7 +86,7 @@
                             </form>
                         </div>
                     </div>
-                    <ul class="pagination">
+                    <ul class="pagination center-pagination">
                         <li><button id="button_prev">Prev</button></li>
                         <li><input type="text" name="page" id="id_soal"></li>
                         <li><button id="button_next">Next</button></li>

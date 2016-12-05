@@ -40,16 +40,16 @@
         <div class="container">
             <div class="row top-title">
                 <div class="col-sm-8 col-sm-offset-2 text">
-                    <h1 style="text-shadow: 3px 3px 6px #000000;"><strong>Ujian Online</strong> Tingkat SMA</h1>
+                    <h1 style="color: #000;"><strong>Ujian Online</strong> Tingkat SMA</h1>
                     <div class="description">
-                        <p style="text-shadow: 3px 3px 6px #000000;">
+                        <p style="color: #000;">
                             Selamat datang di Aplikasi <strong>Ujian Online</strong> Tingkat SMA
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 form-box">
+                <div class="col-sm-6 col-sm-offset-3 form-box well">
                     <div class="form-top">
                         <div class="form-top-left">
                             <h3>Silahkan Login</h3>
