@@ -2,7 +2,10 @@ package com.kvn.ujianonline.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.xml.crypto.Data;
 
+import com.kvn.ujianonline.dao.DaoUser;
+import com.kvn.ujianonline.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +31,9 @@ public class ControllerSoal {
 	@Autowired
 	DaoSoal daoSoal;
 	
-	
+	@Autowired
+	DaoUser daoUser;
+
 	@GetMapping(value="/")
 	public String Login(Model model){
 		return "/userview/login";
@@ -39,8 +44,9 @@ public class ControllerSoal {
 			@RequestParam("password") String password,
 			HttpServletRequest request,
 			Model model){
-		UserAccount user = DataContainer.getInstance().getDaoUserAccount().getByUsername(username);
-		// Check if there is desired user
+		User user = daoUser.findByUsername(username);
+//		UserAccount user = DataContainer.getInstance().getDaoUserAccount().getByUsername(username);
+		// Check if there is desired User
 		if( user != null ){
 			// Check if username match the password
 			if(user.getPassword().equals(password)){
@@ -48,11 +54,11 @@ public class ControllerSoal {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
-				session.setAttribute("nama", user.getSiswa().getNama());
-				session.setAttribute("nidn", user.getSiswa().getNidn());
+				session.setAttribute("nama", user.getUsername());
+				session.setAttribute("nidn", user.getNisn());
 				
-				model.addAttribute("nama", user.getSiswa().getNama());
-				model.addAttribute("nidn", user.getSiswa().getNidn());
+				model.addAttribute("nama", user.getUsername());
+				model.addAttribute("nidn", user.getNisn());
 				model.addAttribute("currenttime", TimeInfo.getCurrentTimeWithOffset());
 				return "/userview/pagewaiting";
 			}
