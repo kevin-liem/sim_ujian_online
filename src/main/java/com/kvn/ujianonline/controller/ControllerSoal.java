@@ -40,11 +40,11 @@ public class ControllerSoal {
 	}
 	
 	@PostMapping(value="/")
-	public String Login(@RequestParam("username") String username,
+	public String Login(@RequestParam("nisn") Integer nisn,
 			@RequestParam("password") String password,
 			HttpServletRequest request,
 			Model model){
-		User user = daoUser.findByNisn(username);
+		User user = daoUser.findByNisn(nisn);
 //		UserAccount user = DataContainer.getInstance().getDaoUserAccount().getByUsername(username);
 		// Check if there is desired User
 		if( user != null ){
@@ -52,18 +52,18 @@ public class ControllerSoal {
 			if(user.getPassword().equals(password)){
 				// Save username and password to session
 				HttpSession session = request.getSession();
-				session.setAttribute("username", username);
+				session.setAttribute("username", nisn);
 				session.setAttribute("password", password);
 				session.setAttribute("nama", user.getUsername());
 				session.setAttribute("nidn", user.getNisn());
 				
-				model.addAttribute("nama", user.getUsername());
-				model.addAttribute("nidn", user.getNisn());
+				model.addAttribute("nama", session.getAttribute("nama"));
+				model.addAttribute("nidn", session.getAttribute("nidn"));
 				model.addAttribute("currenttime", TimeInfo.getCurrentTimeWithOffset());
 				return "/userview/pagewaiting";
 			}
 		}
-		return "/userview/pagelogin";
+		return "/userview/login";
 	}
 	
 	@RequestMapping(value="/userview/soal")
@@ -71,7 +71,7 @@ public class ControllerSoal {
 			Model model){
 		HttpSession session = request.getSession();
 		String nama = (String)session.getAttribute("nama");
-		String nidn = (String)session.getAttribute("nidn");
+		Integer nidn = (Integer) session.getAttribute("nidn");
 		model.addAttribute("nama", nama);
 		model.addAttribute("nidn", nidn);
 		

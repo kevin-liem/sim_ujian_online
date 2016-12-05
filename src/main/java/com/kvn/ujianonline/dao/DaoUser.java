@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface DaoUser extends JpaRepository<User, Long>{
 	public User findByUsername(String username);
 
-	public User findByNisn(String nisn);
+	public User findByNisn(Integer nisn);
 }

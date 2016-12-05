@@ -63,7 +63,7 @@
                         <form role="form" action="/" method="post" class="login-form">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">NISN</label>
-                                <input type="text" name="username" style="text-align: center;" placeholder="Username" class="form-username form-control" id="form-username">
+                                <input type="number" name="nisn" pattern="[0-9]{10}" style="text-align: center;" placeholder="NISN" class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Kata Sandi</label>
