@@ -1,9 +1,10 @@
 package com.kvn.ujianonline.dao;
 
+import com.kvn.ujianonline.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.kvn.ujianonline.model.user;
+public interface DaoUser extends JpaRepository<User, Long>{
+	public User findByUsername(String username);
 
-public interface DaoUser extends JpaRepository<user, Long>{
-	
+	public User findByNisn(Integer nisn);
 }

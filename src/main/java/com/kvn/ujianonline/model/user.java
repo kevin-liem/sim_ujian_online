@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class user {
+public class User {
 	@Id
 	@GeneratedValue
 	private Long id_user;
