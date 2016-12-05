@@ -49,14 +49,14 @@
                 <div class="col-sm-12 form-soal well">
                     <div class="form-bottom">
                         <div class="form-list-soal">
-                            <h3 style="text-align: center;">Soal <span id="nomersoal">${soal.id_soal}</span></h3>
-						<#if soal.path_gmb??><img id="gambar" src="/${soal.path_gmb}" /></#if>
+                            <h3 style="text-align: center;color: #000;">Soal <span id="nomersoal">${soal.id_soal}</span></h3>
+						<#if soal.path_gmb??><img class="center-block" id="gambar" src="/${soal.path_gmb}" /></#if>
                             <p style="text-align: justify;" id="soal">
 							${soal.soal}
                             </p>
                         </div>
                         <div class="form-list-jawab">
-                            <h3 style="text-align: center;">Jawaban</h3>
+                            <h3 style="text-align: center;color: #000">Jawaban</h3>
                             <form action="">
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="a">
