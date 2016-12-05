@@ -123,51 +123,53 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Tambah Jadwal</h4>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Tanggal Ujian</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="date" name="tanggal">                             
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Waktu Ujian</label>                              
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="time" name="tanggal">                             
-                                        </div>
-                                    </div>
+                                <form>
+                                    <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label class="control-label">Mata Pelajaran</label>                             
+                                                <label class="control-label">Tanggal Ujian</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="btn-group"> 
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-                                                        <span class="caret"></span>
-                                                    </button>                                 
-                                                    <ul class="dropdown-menu" role="menu"> 
-                                                        <li><a href="#">Bahasa Indonesia</a></li>
-                                                        <li><a href="#">Bahasa Inggris</a></li>    
-                                                        <li><a href="#">Matematika</a></li>
-                                                        <li><a href="#">Fisika</a></li>
-                                                        <li><a href="#">Biologi</a></li>
-                                                        <li><a href="#">Kimia</a></li>
-                                                        <li><a href="#">Sosiologi</a></li>
-                                                        <li><a href="#">Ekonomi</a></li>
-                                                        <li><a href="#">Geografi</a></li>
-                                                    </ul>                                 
-                                                </div>                             
+                                            <div class="col-md-4">
+                                                <input type="date" name="tanggal">
                                             </div>
                                         </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                                    </div>         
-                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Waktu Ujian</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="time" name="tanggal">
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Mata Pelajaran</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Bahasa Indonesia</a></li>
+                                                            <li><a href="#">Bahasa Inggris</a></li>
+                                                            <li><a href="#">Matematika</a></li>
+                                                            <li><a href="#">Fisika</a></li>
+                                                            <li><a href="#">Biologi</a></li>
+                                                            <li><a href="#">Kimia</a></li>
+                                                            <li><a href="#">Sosiologi</a></li>
+                                                            <li><a href="#">Ekonomi</a></li>
+                                                            <li><a href="#">Geografi</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                                        </div>
+                                    </div>
+                                </form>
                     <!-- /.modal -->
                             </div>
                         </div>
@@ -180,55 +182,57 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Tambah Jadwal</h4>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Tanggal Ujian</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="date" name="tanggal">                             
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Waktu Ujian</label>                              
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="time" name="tanggal">                             
-                                        </div>
-                                    </div>
+                                <form>
+                                    <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label class="control-label">Mata Pelajaran</label>                             
+                                                <label class="control-label">Tanggal Ujian</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="btn-group"> 
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-                                                        <span class="caret"></span>
-                                                    </button>                                 
-                                                    <ul class="dropdown-menu" role="menu"> 
-                                                        <li><a href="#">Bahasa Indonesia</a></li>
-                                                        <li><a href="#">Bahasa Inggris</a></li>    
-                                                        <li><a href="#">Matematika</a></li>
-                                                        <li><a href="#">Fisika</a></li>
-                                                        <li><a href="#">Biologi</a></li>
-                                                        <li><a href="#">Kimia</a></li>
-                                                        <li><a href="#">Sosiologi</a></li>
-                                                        <li><a href="#">Ekonomi</a></li>
-                                                        <li><a href="#">Geografi</a></li>
-                                                    </ul>                                 
-                                                </div>                             
+                                            <div class="col-md-4">
+                                                <input type="date" name="tanggal">
                                             </div>
                                         </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                                    </div>         
-                                </div>
-                    <!-- /.modal -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Waktu Ujian</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="time" name="tanggal">
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Mata Pelajaran</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Bahasa Indonesia</a></li>
+                                                            <li><a href="#">Bahasa Inggris</a></li>
+                                                            <li><a href="#">Matematika</a></li>
+                                                            <li><a href="#">Fisika</a></li>
+                                                            <li><a href="#">Biologi</a></li>
+                                                            <li><a href="#">Kimia</a></li>
+                                                            <li><a href="#">Sosiologi</a></li>
+                                                            <li><a href="#">Ekonomi</a></li>
+                                                            <li><a href="#">Geografi</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <!-- /.modal -->
                     <div class="modal fade" id="hapusjadwal" role="dialog">
                         <div class="modal-dialog">
                           <!-- Modal content-->
@@ -240,10 +244,12 @@
                                 <div class="modal-body">
                                     <p>Apakah anda yakin menghapus data siswa ?</p>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                                </div>
+                                <form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
                             </div>          
                         </div>
                     <!-- /.modal -->

@@ -115,48 +115,50 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Input Siswa</h4>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Nama</label>                             
+                                <form>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Nama</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" placeholder="Masukkan Nama">
+                                            </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Masukkan Nama">                             
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">NISN</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" placeholder="Masukkan NISN">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Jurusan</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                            <a href="#">IPA</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">IPS</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">NISN</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Masukkan NISN">                             
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Jurusan</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="btn-group"> 
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
-                                                    <span class="caret"></span>
-                                                </button>                                 
-                                                <ul class="dropdown-menu" role="menu"> 
-                                                    <li>
-                                                        <a href="#">IPA</a>
-                                                    </li>                                     
-                                                    <li>
-                                                        <a href="#">IPS</a>
-                                                    </li>                                     
-                                                </ul>                                 
-                                            </div>                             
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                                </div>
+                                </form>
                             </div>          
                         </div>
                     <!-- /.modal -->
@@ -170,48 +172,50 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Edit Siswa</h4>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Nama</label>                             
+                                <form>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Nama</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" placeholder="Masukkan Nama">
+                                            </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Masukkan Nama">                             
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">NISN</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" placeholder="Masukkan NISN">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Jurusan</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                            <a href="#">IPA</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">IPS</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">NISN</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Masukkan NISN">                             
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label class="control-label">Jurusan</label>                             
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="btn-group"> 
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
-                                                    <span class="caret"></span>
-                                                </button>                                 
-                                                <ul class="dropdown-menu" role="menu"> 
-                                                    <li>
-                                                        <a href="#">IPA</a>
-                                                    </li>                                     
-                                                    <li>
-                                                        <a href="#">IPS</a>
-                                                    </li>                                     
-                                                </ul>                                 
-                                            </div>                             
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                                </div>
+                                </form>
                             </div>          
                         </div>
                     <!-- /.modal -->
@@ -228,10 +232,12 @@
                                 <div class="modal-body">
                                     <p>Apakah anda yakin menghapus data siswa ?</p>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                                </div>
+                                <form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
                             </div>          
                         </div>
                     <!-- /.modal -->
