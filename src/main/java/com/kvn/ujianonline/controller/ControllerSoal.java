@@ -44,7 +44,7 @@ public class ControllerSoal {
 			@RequestParam("password") String password,
 			HttpServletRequest request,
 			Model model){
-		User user = daoUser.findByUsername(username);
+		User user = daoUser.findByNisn(username);
 //		UserAccount user = DataContainer.getInstance().getDaoUserAccount().getByUsername(username);
 		// Check if there is desired User
 		if( user != null ){
