@@ -26,6 +26,8 @@ import com.kvn.ujianonline.model.UserAccount;
 
 import utility.TimeInfo;
 
+import java.util.List;
+
 @Controller
 public class ControllerSoal {
 	@Autowired
@@ -76,7 +78,9 @@ public class ControllerSoal {
 		model.addAttribute("nidn", nidn);
 		
 		Soal soal = daoSoal.findOne(Long.valueOf(12));
-		model.addAttribute(soal);
+		model.addAttribute("soal", soal);
+		List<Soal> listSoal = daoSoal.findById_mapel(5);
+		model.addAttribute("listSoal", listSoal);
 		return "/userview/soal";
 	}
 	
@@ -85,5 +89,12 @@ public class ControllerSoal {
 	public Soal getSoal(@PathVariable Long id_soal){
 		Soal soal = daoSoal.findOne(id_soal);
 		return soal;
+	}
+
+	@RequestMapping(value="/listsoaljson/{id_mapel}")
+	@ResponseBody
+	public List<Soal> getSoalByIdMapel(@PathVariable Integer id_mapel){
+		List<Soal> listSoal = daoSoal.findById_mapel(id_mapel);
+		return listSoal;
 	}
 }
