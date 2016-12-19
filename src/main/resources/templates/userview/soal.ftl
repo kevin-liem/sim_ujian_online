@@ -49,10 +49,11 @@
                 <div class="col-sm-12 form-soal well">
                     <div class="form-bottom">
                         <div class="form-list-soal">
-                            <h3 style="text-align: center;color: #000;">Soal <span id="nomersoal">${soal.id_soal}</span></h3>
-						<#if soal.path_gmb??><img class="center-block" id="gambar" src="/${soal.path_gmb}" /></#if>
+                            <h3 style="text-align: center;color: #000;">Soal <span id="nomersoal"></span></h3>
+                            <img class="center-block" id="gambar" src="/" />
+						<#--<#if listSoal[0].path_gmb??><img class="center-block" id="gambar" src="/${listSoal[0].path_gmb}" /></#if>-->
                             <p style="text-align: justify;" id="soal">
-							${soal.soal}
+							<#--${listSoal[0].soal}-->
                             </p>
                         </div>
                         <div class="form-list-jawab">
@@ -60,27 +61,28 @@
                             <form action="">
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="a">
-                                        <span id="jwb_a">A. ${soal.jwb_a}</span>
+                                        <#--<span id="jwb_a">A. ${soal.jwb_a}</span>-->
+                                        <span id="jwb_a"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="b">
-                                        <span id="jwb_b">B. ${soal.jwb_b}</span>
+                                        <span id="jwb_b"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="c">
-                                        <span id="jwb_c">C. ${soal.jwb_c}</span>
+                                        <span id="jwb_c"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="d">
-                                        <span id="jwb_d">D. ${soal.jwb_d}</span>
+                                        <span id="jwb_d"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label><input type="radio" name="pilihan" name="e">
-                                        <span id="jwb_e">E. ${soal.jwb_e}</span>
+                                        <span id="jwb_e"></span>
                                     </label>
                                 </div>
                             </form>
@@ -107,73 +109,97 @@
 <!--[if lt IE 10]>
 <script src="/js/placeholder.js"></script>
 <![endif]-->
-
 <script>
-    var id_soal = 12;
+    var listSoal = [
+        <#list listSoal as soalObj>
+            {
+                idSoal:${soalObj.id_soal},
+                idMapel:${soalObj.id_mapel},
+                soal:"${soalObj.soal}",
+                jwbA:"${soalObj.jwb_a}",
+                jwbB:"${soalObj.jwb_b}",
+                jwbC:"${soalObj.jwb_c}",
+                jwbD:"${soalObj.jwb_d}",
+                jwbE:"${soalObj.jwb_e}",
+                kunciJwb:${soalObj.kunci},
+                pathGambar:"/<#if soalObj.path_gmb??>${soalObj.path_gmb}</#if>"
+            },
+        </#list>
+    ];
+
+    var indexSoal = 0;
+
+    // Check if there is image available
+    if(listSoal[indexSoal].pathGambar != "/"){
+        $("#gambar").show();
+        $("#gambar").attr("src", listSoal[indexSoal].pathGambar);
+    }
+    else {
+        $("#gambar").hide();
+    }
+    $("#nomersoal").text(indexSoal + 1);
+    $("#soal").text(listSoal[indexSoal].soal);
+    $("#jwb_a").text("A. " + listSoal[indexSoal].jwbA);
+    $("#jwb_b").text("B. " + listSoal[indexSoal].jwbB);
+    $("#jwb_c").text("C. " + listSoal[indexSoal].jwbC);
+    $("#jwb_d").text("D. " + listSoal[indexSoal].jwbD);
+    $("#jwb_e").text("E. " + listSoal[indexSoal].jwbE);
+
+    // Pagination input textbox
+    $("#id_soal").value = indexSoal + 1;
+
     $("#button_next").click(function(){
-        if(id_soal + 1 < 22)
-            id_soal += 1;
+        if(indexSoal + 1 < 10)
+            indexSoal += 1;
         else
             return;
 
-        $.ajax({
-            url:"/soaljson/" + id_soal,
-            method:"GET",
-            success:function(response){
-                console.log(response);
-//                        if(response.path_gmb.toString() === "null"){
-//                            $("#gambar").hide();
-//                        }
-//                        else {
-//                            $("#gambar").show();
-//                            $("#gambar").attr("src", "/" + response.path_gmb);
-//                        }
-                $("#gambar").attr("src", "/" + response.path_gmb);
-                $("#nomersoal").text(id_soal);
-                $("#soal").text(response.soal);
-                $("#jwb_a").text("A. " + response.jwb_a);
-                $("#jwb_b").text("B. " + response.jwb_b);
-                $("#jwb_c").text("C. " + response.jwb_c);
-                $("#jwb_d").text("D. " + response.jwb_d);
-                $("#jwb_e").text("E. " + response.jwb_e);
+        // Check if there is image available
+        if(listSoal[indexSoal].pathGambar != "/"){
+            $("#gambar").show();
+            $("#gambar").attr("src", listSoal[indexSoal].pathGambar);
+        }
+        else {
+            $("#gambar").hide();
+        }
+        $("#nomersoal").text(indexSoal + 1);
+        $("#soal").text(listSoal[indexSoal].soal);
+        $("#jwb_a").text("A. " + listSoal[indexSoal].jwbA);
+        $("#jwb_b").text("B. " + listSoal[indexSoal].jwbB);
+        $("#jwb_c").text("C. " + listSoal[indexSoal].jwbC);
+        $("#jwb_d").text("D. " + listSoal[indexSoal].jwbD);
+        $("#jwb_e").text("E. " + listSoal[indexSoal].jwbE);
 
-                $("#id_soal").text(id_soal);
-            }
-        });
+        // Pagination number
+        $("#id_soal").value = indexSoal + 1;
     });
+
     $("#button_prev").click(function(){
-        if(id_soal - 1 > 11)
-            id_soal -= 1;
+        if(indexSoal - 1 >= 0)
+            indexSoal -= 1;
         else
             return;
 
-        $.ajax({
-            url:"/soaljson/" + id_soal,
-            method:"GET",
-            success:function(response){
-                console.log(response);
-//                        if(response.path_gmb.toString() === "null"){
-//                            $("#gambar").hide();
-//                        }
-//                        else {
-//                            $("#gambar").show();
-//                            $("#gambar").attr("src", "/" + response.path_gmb);
-//                        }
-                $("#gambar").attr("src", "/" + response.path_gmb);
-                $("#nomersoal").text(id_soal);
-                $("#soal").text(response.soal);
-                $("#jwb_a").text("A. " + response.jwb_a);
-                $("#jwb_b").text("B. " + response.jwb_b);
-                $("#jwb_c").text("C. " + response.jwb_c);
-                $("#jwb_d").text("D. " + response.jwb_d);
-                $("#jwb_e").text("E. " + response.jwb_e);
+        // Check if there is image available
+        if(listSoal[indexSoal].pathGambar != "/"){
+            $("#gambar").show();
+            $("#gambar").attr("src", listSoal[indexSoal].pathGambar);
+        }
+        else {
+            $("#gambar").hide();
+        }
+        $("#nomersoal").text(indexSoal + 1);
+        $("#soal").text(listSoal[indexSoal].soal);
+        $("#jwb_a").text("A. " + listSoal[indexSoal].jwbA);
+        $("#jwb_b").text("B. " + listSoal[indexSoal].jwbB);
+        $("#jwb_c").text("C. " + listSoal[indexSoal].jwbC);
+        $("#jwb_d").text("D. " + listSoal[indexSoal].jwbD);
+        $("#jwb_e").text("E. " + listSoal[indexSoal].jwbE);
 
-                $("#id_soal").text(id_soal);
-            }
-        });
+        // Pagination number
+        $("#id_soal").value = indexSoal + 1;
     });
 </script>
-
 </body>
 
 </html>

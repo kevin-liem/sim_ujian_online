@@ -78,7 +78,7 @@ public class ControllerSoal {
 		model.addAttribute("nidn", nidn);
 		
 		Soal soal = daoSoal.findOne(Long.valueOf(12));
-		model.addAttribute("soal", soal);
+//		model.addAttribute("soal", soal);
 		List<Soal> listSoal = daoSoal.findById_mapel(5);
 		model.addAttribute("listSoal", listSoal);
 		return "/userview/soal";
