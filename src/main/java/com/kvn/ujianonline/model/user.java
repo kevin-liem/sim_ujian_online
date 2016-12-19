@@ -15,28 +15,28 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-	@Id
-	@GeneratedValue
-	private Long id_user;
-	
-	@Column
-	private String username;
-	
-	@Column
-	private String password;
-	
-	@Column
-	private int nisn;
+    @Id
+    @GeneratedValue
+    private Long id_user;
 
-	@Column
-	private int status_siswa;
+    @Column
+    private String username;
 
-	@Column
-	private int hak_akses;
+    @Column
+    private String password;
 
-	@Column
-	private String jurusan;
+    @Column
+    private int nisn;
 
-	@Column
-	private int status_ujian;
+    @Column
+    private int status_siswa;
+
+    @Column
+    private int hak_akses;
+
+    @Column
+    private String jurusan;
+
+    @Column
+    private int status_ujian;
 }
