@@ -93,17 +93,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <#list siswamodel as user>
                             <tr>
-                                <td>2103141057</td>
-                                <td>Novan Andhy Trianto</td>
-                                <td>IPA</td>
-                                <td>Diizinkan Ujian</td>
-                                <td>Telah Ujian</td>
+                                <td>${user.nisn}</td>
+                                <td>${user.username}</td>
+                                <td>${user.jurusan}</td>
+                                <td>${user.status_siswa}n</td>
+                                <td>${user.status_ujian}</td>
                                 <td>
                                     <a href="#" data-toggle="tooltip" title="Edit siswa"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editsiswa"></button></a>
                                     <a href="#" data-toggle="tooltip" title="Hapus Siswa"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapusiswa"></button></a>
                                 </td>
                             </tr>
+                        </#list>
                         </tbody>
                     </table>
                     <!-- Modal -->
