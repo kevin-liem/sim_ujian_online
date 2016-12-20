@@ -1,5 +1,6 @@
 package com.kvn.ujianonline.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 
@@ -14,8 +15,10 @@ public class ControllerAdmin {
         return "/adminview/overview";
     }
 
+//  controller siswa
     @RequestMapping(value="/admin/data-siswa")
     public String dataSiswa(){
+
         return "/adminview/datasiswa";
     }
 
