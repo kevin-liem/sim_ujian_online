@@ -42,7 +42,7 @@ public class ControllerSoal {
 	}
 	
 	@PostMapping(value="/")
-	public String Login(@RequestParam("nisn") Integer nisn,
+	public String Login(@RequestParam("nisn") String nisn,
 			@RequestParam("password") String password,
 			HttpServletRequest request,
 			Model model){

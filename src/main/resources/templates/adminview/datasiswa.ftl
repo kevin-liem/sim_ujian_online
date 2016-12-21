@@ -93,22 +93,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <#list siswalist as user>
                             <tr>
-                                <#list model["siswamodel"] as user>
                                 <td>${user.nisn}</td>
                                 <td>${user.username}</td>
                                 <td>${user.jurusan}</td>
-                                <td>${user.status_siswa}n</td>
-                                <td>${user.status_ujian}</td>
-                                </#list>
+                                <input type="hidden" id="siswa" value="${user.status_siswa}">
+                                <td id="status_siswa"></td>
+                                <input type="hidden" id="ujian" value="${user.status_siswa}">
+                                <td id="status_ujian"></td>
                                 <td>
-                                    <a href="#" data-toggle="tooltip" title="Edit siswa"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editsiswa"></button></a>
-                                    <a href="#" data-toggle="tooltip" title="Hapus Siswa"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapusiswa"></button></a>
+                                    <button class="btn btn-warning btn-sm" onclick="editUser('${user.nisn}','${user.username}','${user.jurusan}','${user.password}')" title="Edit Siswa"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    <button class="btn btn-danger btn-sm" onclick="hapusUser(${user.id_user})" title="Hapus Siswa"><i class="glyphicon glyphicon-remove"></i></button>
                                 </td>
                             </tr>
+                        </#list>
                         </tbody>
                     </table>
                     <!-- Modal -->
+
+
                     <div class="modal fade" id="tambahsiswa" role="dialog">
                         <div class="modal-dialog">
                           <!-- Modal content-->
@@ -117,14 +121,14 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Input Siswa</h4>
                                 </div>
-                                <form>
+                                <form action="/admin/data-siswa/save" method="post">
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label class="control-label">Nama</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" placeholder="Masukkan Nama">
+                                                <input type="text" class="form-control" name="username" placeholder="Masukkan Nama">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -132,7 +136,7 @@
                                                 <label class="control-label">NISN</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" placeholder="Masukkan NISN">
+                                                <input type="text" class="form-control" name="nisn" placeholder="Masukkan NISN">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -141,23 +145,24 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li>
-                                                            <a href="#">IPA</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">IPS</a>
-                                                        </li>
-                                                    </ul>
+                                                    <select name="jurusan">
+                                                        <option value="IPA">IPA</option>
+                                                        <option value="IPS">IPS</option>
+                                                    </select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Password</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="password" placeholder="Masukkan Password">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                        <button type="submit" class="btn btn-success" value="submit">Simpan</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                     </div>
                                 </form>
@@ -166,22 +171,24 @@
                     <!-- /.modal -->
                     </div>
                     <!-- Modal -->
+
+
                     <div class="modal fade" id="editsiswa" role="dialog">
                         <div class="modal-dialog">
-                          <!-- Modal content-->
+                            <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Edit Siswa</h4>
+                                    <h4 class="modal-title">Sunting Siswa</h4>
                                 </div>
-                                <form>
+                                <form action="" id="form_edit_user" method="get">
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label class="control-label">Nama</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" placeholder="Masukkan Nama">
+                                                <input type="text" id="username" class="form-control" name="username" placeholder="Masukkan Nama">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -189,7 +196,7 @@
                                                 <label class="control-label">NISN</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" placeholder="Masukkan NISN">
+                                                <input type="text" id="nisn" class="form-control" name="nisn" placeholder="Masukkan NISN">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -198,31 +205,34 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Jurusan
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li>
-                                                            <a href="#">IPA</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">IPS</a>
-                                                        </li>
-                                                    </ul>
+                                                    <select name="jurusan" id="jurusan">
+                                                        <option value="IPA">IPA</option>
+                                                        <option value="IPS">IPS</option>
+                                                    </select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Password</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" id="password" class="form-control" name="password" placeholder="Masukkan Password">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                        <button type="submit" class="btn btn-success" value="submit">Simpan</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                     </div>
                                 </form>
-                            </div>          
+                            </div>
                         </div>
                     <!-- /.modal -->
                     </div>
                     <!-- Modal -->
+
+
                     <div class="modal fade" id="hapusiswa" role="dialog">
                         <div class="modal-dialog">
                           <!-- Modal content-->
@@ -234,9 +244,9 @@
                                 <div class="modal-body">
                                     <p>Apakah anda yakin menghapus data siswa ?</p>
                                 </div>
-                                <form>
+                                <form action="" id="form_hapus_user" method="post">
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
                                     </div>
                                 </form>
@@ -259,8 +269,34 @@
 <script src="/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip(); 
+$('[data-toggle="tooltip"]').tooltip();
 });
+
+var td1 = (document.getElementById("ujian")).value;
+var td2 = (document.getElementById("siswa")).value;
+if(td1 == 0){
+    document.getElementById("status_ujian").innerHTML = "Belum Ujian";
+}else {
+    document.getElementById("status_ujian").innerHTML = "Telah Ujian";
+}
+if(td2 == 0){
+    document.getElementById("status_siswa").innerHTML = "Diizinkan";
+}else {
+    document.getElementById("status_siswa").innerHTML  = "Tidak Diizinkan";
+}
+
+function hapusUser(id) {
+    $("#form_hapus_user").attr('action','/admin/data-siswa/delete/'+id);
+    $("#hapusiswa").modal('show');
+}
+function editUser(nisn,username,jurusan,password) {
+    $("#form_edit_user").attr('action','/admin/data-siswa/edit/'+nisn);
+    $("#editsiswa").modal('show');
+    $("#username").val(username);
+    $("#nisn").val(nisn);
+    $("#jurusan").val(jurusan);
+    $("#password").val(password);
+}
 </script>
 </body>
 </html>

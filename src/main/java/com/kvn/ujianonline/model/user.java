@@ -26,7 +26,7 @@ public class User {
     private String password;
 
     @Column
-    private int nisn;
+    private String nisn;
 
     @Column
     private int status_siswa;
