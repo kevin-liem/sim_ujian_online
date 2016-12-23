@@ -57,10 +57,10 @@ public class ControllerSoal {
 				session.setAttribute("username", nisn);
 				session.setAttribute("password", password);
 				session.setAttribute("nama", user.getUsername());
-				session.setAttribute("nidn", user.getNisn());
+				session.setAttribute("nisn", user.getNisn());
 				
 				model.addAttribute("nama", session.getAttribute("nama"));
-				model.addAttribute("nidn", session.getAttribute("nidn"));
+				model.addAttribute("nisn", session.getAttribute("nisn"));
 				model.addAttribute("currenttime", TimeInfo.getCurrentTimeWithOffset());
 				return "/userview/pagewaiting";
 			}
@@ -73,9 +73,9 @@ public class ControllerSoal {
 			Model model){
 		HttpSession session = request.getSession();
 		String nama = (String)session.getAttribute("nama");
-		Integer nidn = (Integer) session.getAttribute("nidn");
+		String nisn = (String) session.getAttribute("nisn");
 		model.addAttribute("nama", nama);
-		model.addAttribute("nidn", nidn);
+		model.addAttribute("nisn", nisn);
 		
 //		Soal soal = daoSoal.findOne(Long.valueOf(12));
 //		model.addAttribute("soal", soal);
