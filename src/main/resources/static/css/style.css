@@ -36,6 +36,8 @@ h3 {
 
 img { max-width: 100%; }
 
+.table { overflow-x: auto !important;}
+
 ::-moz-selection { background: #de615e; color: #fff; text-shadow: none; }
 ::selection { background: #de615e; color: #fff; text-shadow: none; }
 
@@ -295,4 +297,8 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .center-pagination{
 	display: block !important;
 	width: 100%;
+}
+
+.table{
+	font-size:10pt;
 }

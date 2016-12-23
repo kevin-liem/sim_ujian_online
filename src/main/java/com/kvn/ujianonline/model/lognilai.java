@@ -14,17 +14,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class lognilai {
+public class Lognilai {
 	@Id
 	@GeneratedValue
 	private Long id_log;
-	
+
 	@Column
 	private int id_mapel;
-	
+
 	@Column
-	private int id_user;
+	private String nisn;
 	
 	@Column
 	private int nilai;
+
+	@Column
+	private String username;
 }

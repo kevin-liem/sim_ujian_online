@@ -96,8 +96,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <#list nilailist as nilai>
                                     <tr>
-                                        <td>2103141057</td>
+                                        <td>${nilai.nisn}</td>
                                         <td>Novan Andhy Trianto</td>
                                         <td>90</td>
                                         <td>98</td>
@@ -109,6 +110,7 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
+                                    </#list>
                                 </tbody>
                             </table>
 

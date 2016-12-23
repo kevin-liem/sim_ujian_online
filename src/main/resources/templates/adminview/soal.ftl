@@ -57,7 +57,7 @@
                         <li>
                             <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
-                    </ul>
+                   </ul>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -94,9 +94,9 @@
         		<div class="col-lg-12">
         		<h2>Daftar Soal</h2>
         		<button class="btn btn-info btn-md" style="position: static;float: right;" data-toggle="modal" data-target="#tambahsoal">
-                        <span class="glyphicon glyphicon-plus"></span> Tambah Siswa 
+                        <span class="glyphicon glyphicon-plus"></span> Tambah Soal
                     </button>
-                    <table class="table table-bordered" >
+                    <table class="table table-bordered" style="font-size: 10pt" >
                         <thead>
                             <tr>
                                 <th>Mata Pelajaran</th>
@@ -112,21 +112,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Matematika</td>
-                                <td>1 + 1 =</td>
-                                <td>3</td>
-                                <td>1</td>
-                                <td>12</td>
-                                <td>12</td>
-                                <td>4</td>
-                                <td>gambar</td>
-                                <td>A</td>
-                                <td>
-                                    <a href="#" data-toggle="tooltip" title="Edit Soal"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editsoal"></button></a>
-                                    <a href="#" data-toggle="tooltip" title="Hapus Soal"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapussoal"></button></a>
-                                </td>
-                            </tr>
+						<#list soalList as soal>
+							<tr>
+								<td id="text">${soal.id_mapel}</td>
+								<td id="text">${soal.soal}</td>
+								<td id="text">${soal.jwb_a}</td>
+								<td id="text">${soal.jwb_b}</td>
+								<td id="text">${soal.jwb_c}</td>
+								<td id="text">${soal.jwb_d}</td>
+								<td id="text">${soal.jwb_e}</td>
+								<td id="text">${soal.path_gmb}</td>
+								<td id="text">${soal.kunci}</td>
+								<td>
+									<a href="#" data-toggle="tooltip" title="Edit Soal"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editsoal"></button></a>
+									<a href="#" data-toggle="tooltip" title="Hapus Soal"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapussoal"></button></a>
+								</td>
+							</tr>
+						</#list>
                         </tbody>
                     </table>
                     <div class="modal fade" id="tambahsoal" role="dialog">
@@ -147,15 +149,15 @@
 				                                <span class="caret"></span>
 				                            </button>                                 
 				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li><a href="#">Bahasa Indonesia</a></li>
-				                                <li><a href="#">Bahasa Inggris</a></li>    
-				                                <li><a href="#">Matematika</a></li>
-				                                <li><a href="#">Fisika</a></li>
-				                                <li><a href="#">Biologi</a></li>
-				                                <li><a href="#">Kimia</a></li>
-				                                <li><a href="#">Sosiologi</a></li>
-				                                <li><a href="#">Ekonomi</a></li>
-				                                <li><a href="#">Geografi</a></li>
+				                                <li value="1">Bahasa Indonesia</li>
+				                                <li value="2">Bahasa Inggris</li>
+				                                <li value="3">Matematika</li>
+				                                <li value="5">Fisika</li>
+				                                <li value="4">Biologi</li>
+				                                <li value="6">Kimia</li>
+				                                <li value="7">Sosiologi</li>
+				                                <li value="9">Ekonomi</li>
+				                                <li value="8">Geografi</li>
 				                            </ul>                                 
 				                        </div>                             
 				                    </div>
@@ -173,11 +175,11 @@
 				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kunci Jawaban<span class="caret"></span>
 				                            </button>                                 
 				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li><a href="#">A</a></li>
-				                                <li><a href="#">B</a></li>
-				                                <li><a href="#">C</a></li>
-				                                <li><a href="#">D</a></li>
-				                                <li><a href="#">E</a></li>
+				                                <li value="1">A</li>
+				                                <li value="2">B</li>
+				                                <li value="3">C</li>
+				                                <li value="4">D</li>
+				                                <li value="5">E</li>
 				                            </ul>                                 
 				                        </div>                             
 				                    </div>
@@ -246,16 +248,16 @@
 				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
 				                                <span class="caret"></span>
 				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li><a href="#">Bahasa Indonesia</a></li>
-				                                <li><a href="#">Bahasa Inggris</a></li>    
-				                                <li><a href="#">Matematika</a></li>
-				                                <li><a href="#">Fisika</a></li>
-				                                <li><a href="#">Biologi</a></li>
-				                                <li><a href="#">Kimia</a></li>
-				                                <li><a href="#">Sosiologi</a></li>
-				                                <li><a href="#">Ekonomi</a></li>
-				                                <li><a href="#">Geografi</a></li>
+				                            <ul class="dropdown-menu" role="menu">
+                                                <li value="1">Bahasa Indonesia</li>
+                                                <li value="2">Bahasa Inggris</li>
+                                                <li value="3">Matematika</li>
+                                                <li value="5">Fisika</li>
+                                                <li value="4">Biologi</li>
+                                                <li value="6">Kimia</li>
+                                                <li value="7">Sosiologi</li>
+                                                <li value="9">Ekonomi</li>
+                                                <li value="8">Geografi</li>
 				                            </ul>                                 
 				                        </div>                             
 				                    </div>
@@ -272,12 +274,12 @@
 				                        <div class="btn-group"> 
 				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kunci Jawaban<span class="caret"></span>
 				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li><a href="#">A</a></li>
-				                                <li><a href="#">B</a></li>
-				                                <li><a href="#">C</a></li>
-				                                <li><a href="#">D</a></li>
-				                                <li><a href="#">E</a></li>
+				                            <ul class="dropdown-menu" role="menu">
+                                                <li value="1">A</li>
+                                                <li value="2">B</li>
+                                                <li value="3">C</li>
+                                                <li value="4">D</li>
+                                                <li value="5">E</li>
 				                            </ul>                                 
 				                        </div>                             
 				                    </div>
