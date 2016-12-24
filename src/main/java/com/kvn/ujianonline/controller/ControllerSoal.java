@@ -26,7 +26,7 @@ import com.kvn.ujianonline.model.UserAccount;
 
 import utility.TimeInfo;
 
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class ControllerSoal {
@@ -76,11 +76,23 @@ public class ControllerSoal {
 		String nisn = (String) session.getAttribute("nisn");
 		model.addAttribute("nama", nama);
 		model.addAttribute("nisn", nisn);
-		
-//		Soal soal = daoSoal.findOne(Long.valueOf(12));
-//		model.addAttribute("soal", soal);
+
+		Integer nisnInteger = new Integer(nisn);
+		int indexTipeSoal = nisnInteger % 5;	// 0=0; 1=1; 2=2; 3=3; 4=4; 5=0; 6=1; 7=2; 8=3; 9=4;
 		List<Soal> listSoal = daoSoal.findById_mapel(5);
-		model.addAttribute("listSoal", listSoal);
+
+		List<Soal> randomListSoal = new LinkedList<Soal>();
+		while (!listSoal.isEmpty()){
+			if (listSoal.size() > indexTipeSoal){
+				randomListSoal.add(listSoal.get(indexTipeSoal));
+				listSoal.remove(indexTipeSoal);
+			}
+			else {
+				indexTipeSoal--;
+			}
+		}
+
+		model.addAttribute("listSoal", randomListSoal);
 		return "/userview/soal";
 	}
 	
