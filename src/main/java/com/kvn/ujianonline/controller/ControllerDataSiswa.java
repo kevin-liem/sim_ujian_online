@@ -56,6 +56,8 @@ public class ControllerDataSiswa {
         newuser.setNisn(nisn);
         newuser.setJurusan(jurusan);
         newuser.setPassword(password);
+        newuser.setStatus_siswa(1);
+        newuser.setStatus_ujian(0);
         daoUser.save(newuser);
         return "redirect:/admin/data-siswa";
     }

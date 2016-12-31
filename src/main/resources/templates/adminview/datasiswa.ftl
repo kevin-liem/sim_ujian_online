@@ -100,10 +100,10 @@
                                 <td>${user.jurusan}</td>
                                 <input type="hidden" id="siswa" value="${user.status_siswa}">
                                 <td id="status_siswa"></td>
-                                <input type="hidden" id="ujian" value="${user.status_siswa}">
+                                <input type="hidden" id="ujian" value="${user.status_ujian}">
                                 <td id="status_ujian"></td>
                                 <td>
-                                    <button class="btn btn-warning btn-sm" onclick="editUser('${user.nisn}','${user.username}','${user.jurusan}','${user.password}')" title="Edit Siswa"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    <button class="btn btn-warning btn-sm" onclick="editUser('${user.nisn}','${user.username}','${user.jurusan}','${user.password}','${user.status_siswa}','${user.status_ujian}')" title="Edit Siswa"><i class="glyphicon glyphicon-pencil"></i></button>
                                     <button class="btn btn-danger btn-sm" onclick="hapusUser(${user.id_user})" title="Hapus Siswa"><i class="glyphicon glyphicon-remove"></i></button>
                                 </td>
                             </tr>
@@ -280,22 +280,24 @@ if(td1 == 0){
     document.getElementById("status_ujian").innerHTML = "Telah Ujian";
 }
 if(td2 == 0){
-    document.getElementById("status_siswa").innerHTML = "Diizinkan";
+    document.getElementById("status_siswa").innerHTML = "Tidak Diizinkan";
 }else {
-    document.getElementById("status_siswa").innerHTML  = "Tidak Diizinkan";
+    document.getElementById("status_siswa").innerHTML  = "Diizinkan";
 }
 
 function hapusUser(id) {
     $("#form_hapus_user").attr('action','/admin/data-siswa/delete/'+id);
     $("#hapusiswa").modal('show');
 }
-function editUser(nisn,username,jurusan,password) {
+function editUser(nisn,username,jurusan,password,status_siswa, status_ujian) {
     $("#form_edit_user").attr('action','/admin/data-siswa/edit/'+nisn);
     $("#editsiswa").modal('show');
     $("#username").val(username);
     $("#nisn").val(nisn);
     $("#jurusan").val(jurusan);
     $("#password").val(password);
+    $("#status_siswa").val(status_siswa);
+    $("#status_ujian").val(status_ujian);
 }
 </script>
 </body>

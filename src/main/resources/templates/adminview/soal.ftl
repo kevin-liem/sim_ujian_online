@@ -140,80 +140,76 @@
                                     <h4 class="modal-title">Tambah Soal</h4>
                                 </div>
                                 <div class="modal-body">
-                                   	<div class="col-md-4">
+                                   	<div class="col-md-6">
 				                        <label class="control-label">Mata Pelajaran</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <div class="btn-group"> 
-				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-				                                <span class="caret"></span>
-				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li value="1">Bahasa Indonesia</li>
-				                                <li value="2">Bahasa Inggris</li>
-				                                <li value="3">Matematika</li>
-				                                <li value="5">Fisika</li>
-				                                <li value="4">Biologi</li>
-				                                <li value="6">Kimia</li>
-				                                <li value="7">Sosiologi</li>
-				                                <li value="9">Ekonomi</li>
-				                                <li value="8">Geografi</li>
-				                            </ul>                                 
-				                        </div>                             
+				                        <div class="btn-group">
+                                            <label class="control-label">Soal</label>
+										<#--<select name="jurusan" id="jurusan">-->
+                                                <#--<option value="1">Bahasa Indonesia</option>-->
+                                                <#--<option value="2">Bahasa Inggris</option>-->
+                                                <#--<option value="3">Matematika</option>-->
+                                                <#--<option value="4">Biologi</option>-->
+                                                <#--<option value="5">Fisika</option>-->
+                                                <#--<option value="6">Kimia</option>-->
+                                                <#--<option value="7">Sosiologi</option>-->
+                                                <#--<option value="8">Geografi</option>-->
+                                                <#--<option value="9">Ekonomi</option>-->
+                                            <#--</select>-->
+				                        </div>
 				                    </div>
-				        			<div class="col-md-4">
+				        			<div class="col-md-6">
 				                        <label class="control-label">Soal</label>                             
 				                    </div>
-				                    <div class="col-md-6">
-				                        <textarea class="form-control" rows="8" placeholder="Masukkan Soal"></textarea>   
-				                    </div>
 				                    <div class="col-md-4">
-				                        <label class="control-label">Kunci jawaban</label>                             
+				                        <textarea class="form-control" rows="8" id="soal" placeholder="Masukkan Soal"></textarea>
 				                    </div>
 				                    <div class="col-md-6">
-				                        <div class="btn-group"> 
-				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kunci Jawaban<span class="caret"></span>
-				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu"> 
-				                                <li value="1">A</li>
-				                                <li value="2">B</li>
-				                                <li value="3">C</li>
-				                                <li value="4">D</li>
-				                                <li value="5">E</li>
-				                            </ul>                                 
-				                        </div>                             
-				                    </div>
-				                    <div class="col-md-4">
 				                        <label class="control-label">Pilihan A</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban A">
+				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban A">
 				                    </div>
-				                    <div class="col-md-4">
+				                    <div class="col-md-6">
 				                        <label class="control-label">Pilihan B</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban B">
+				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban B">
 				                    </div>
-				                    <div class="col-md-4">
+				                    <div class="col-md-6">
 				                        <label class="control-label">Pilihan C</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban C">
+				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban C">
 				                    </div>
-				                    <div class="col-md-4">
+				                    <div class="col-md-6">
 				                        <label class="control-label">Pilihan D</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban D">
+				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban D">
 				                    </div>
-				                    <div class="col-md-4">
+				                    <div class="col-md-6">
 				                        <label class="control-label">Pilihan E</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban E">
+				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban E">
 				                    </div>
-				                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Kunci jawaban</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <select name="jurusan" id="jurusan">
+                                                <option value="1">A</option>
+                                                <option value="2">B</option>
+                                                <option value="3">C</option>
+                                                <option value="4">D</option>
+                                                <option value="5">E</option>
+                                            </select>
+                                        </div>
+                                    </div>
+				                    <div class="col-md-6"></div>
 				                    <input type="file" name="img[]" class="file">
 								    <div class="input-group col-xs-6">
 								      	<span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
@@ -244,21 +240,18 @@
 				                        <label class="control-label">Mata Pelajaran</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <div class="btn-group"> 
-				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-				                                <span class="caret"></span>
-				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu">
-                                                <li value="1">Bahasa Indonesia</li>
-                                                <li value="2">Bahasa Inggris</li>
-                                                <li value="3">Matematika</li>
-                                                <li value="5">Fisika</li>
-                                                <li value="4">Biologi</li>
-                                                <li value="6">Kimia</li>
-                                                <li value="7">Sosiologi</li>
-                                                <li value="9">Ekonomi</li>
-                                                <li value="8">Geografi</li>
-				                            </ul>                                 
+				                        <div class="btn-group">
+                                            <select name="jurusan" id="jurusan">
+                                                <option value="1">Bahasa Indonesia</option>
+                                                <option value="2">Bahasa Inggris</option>
+                                                <option value="3">Matematika</option>
+                                                <option value="4">Biologi</option>
+                                                <option value="5">Fisika</option>
+                                                <option value="6">Kimia</option>
+                                                <option value="7">Sosiologi</option>
+                                                <option value="8">Geografi</option>
+                                                <option value="9">Ekonomi</option>
+                                            </select>
 				                        </div>                             
 				                    </div>
 				        			<div class="col-md-4">
@@ -271,17 +264,15 @@
 				                        <label class="control-label">Kunci jawaban</label>                             
 				                    </div>
 				                    <div class="col-md-6">
-				                        <div class="btn-group"> 
-				                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kunci Jawaban<span class="caret"></span>
-				                            </button>                                 
-				                            <ul class="dropdown-menu" role="menu">
-                                                <li value="1">A</li>
-                                                <li value="2">B</li>
-                                                <li value="3">C</li>
-                                                <li value="4">D</li>
-                                                <li value="5">E</li>
-				                            </ul>                                 
-				                        </div>                             
+				                        <div class="btn-group">
+                                            <select name="jurusan" id="jurusan">
+                                                <option value="1">A</option>
+                                                <option value="2">B</option>
+                                                <option value="3">C</option>
+                                                <option value="4">D</option>
+                                                <option value="5">E</option>
+                                            </select>
+										</div>
 				                    </div>
 				                    <div class="col-md-4">
 				                        <label class="control-label">Pilihan A</label>                             
