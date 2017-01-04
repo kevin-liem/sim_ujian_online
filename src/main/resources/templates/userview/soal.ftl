@@ -93,6 +93,9 @@
                         <li><input type="number" name="page" id="id_soal" min="1" max="20" style="width: 63px;" ></li>
                         <li><button id="button_next">Next</button></li>
                     </ul>
+                    <form action="">
+                        <button id="button_submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
