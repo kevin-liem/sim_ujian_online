@@ -124,8 +124,8 @@
 								<td id="text">${soal.path_gmb}</td>
 								<td id="text">${soal.kunci}</td>
 								<td>
-									<a href="#" data-toggle="tooltip" title="Edit Soal"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editsoal"></button></a>
-									<a href="#" data-toggle="tooltip" title="Hapus Soal"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapussoal"></button></a>
+                                    <button class="btn btn-warning btn-sm" onclick="editSoal('${soal.id_soal}','${soal.id_mapel}','${soal.soal}','${soal.jwb_a}','${soal.jwb_b}','${soal.jwb_c}','${soal.jwb_d}','${soal.jwb_e}','${soal.path_gmb}','${soal.kunci}')" title="Edit Soal"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    <button class="btn btn-danger btn-sm" onclick="hapusSoal(${soal.id_soal})" title="Hapus Soal"><i class="glyphicon glyphicon-remove"></i></button>
 								</td>
 							</tr>
 						</#list>
@@ -139,186 +139,191 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Tambah Soal</h4>
                                 </div>
-                                <div class="modal-body">
-                                   	<div class="col-md-6">
-				                        <label class="control-label">Mata Pelajaran</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="btn-group">
+                                <form action="/admin/data-soal/save" method="post">
+                                    <div class="modal-body">
+                                        <div class="col-md-6">
+                                            <label class="control-label">Mata Pelajaran</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="btn-group">
+                                                <select name="id_mapel" class="form-control">
+                                                    <option value="1">Bahasa Indonesia</option>
+                                                    <option value="2">Bahasa Inggris</option>
+                                                    <option value="3">Matematika</option>
+                                                    <option value="4">Biologi</option>
+                                                    <option value="5">Fisika</option>
+                                                    <option value="6">Kimia</option>
+                                                    <option value="7">Sosiologi</option>
+                                                    <option value="8">Geografi</option>
+                                                    <option value="9">Ekonomi</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <label class="control-label">Soal</label>
-										<#--<select name="jurusan" id="jurusan">-->
-                                                <#--<option value="1">Bahasa Indonesia</option>-->
-                                                <#--<option value="2">Bahasa Inggris</option>-->
-                                                <#--<option value="3">Matematika</option>-->
-                                                <#--<option value="4">Biologi</option>-->
-                                                <#--<option value="5">Fisika</option>-->
-                                                <#--<option value="6">Kimia</option>-->
-                                                <#--<option value="7">Sosiologi</option>-->
-                                                <#--<option value="8">Geografi</option>-->
-                                                <#--<option value="9">Ekonomi</option>-->
-                                            <#--</select>-->
-				                        </div>
-				                    </div>
-				        			<div class="col-md-6">
-				                        <label class="control-label">Soal</label>                             
-				                    </div>
-				                    <div class="col-md-4">
-				                        <textarea class="form-control" rows="8" id="soal" placeholder="Masukkan Soal"></textarea>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <label class="control-label">Pilihan A</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban A">
-				                    </div>
-				                    <div class="col-md-6">
-				                        <label class="control-label">Pilihan B</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban B">
-				                    </div>
-				                    <div class="col-md-6">
-				                        <label class="control-label">Pilihan C</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban C">
-				                    </div>
-				                    <div class="col-md-6">
-				                        <label class="control-label">Pilihan D</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban D">
-				                    </div>
-				                    <div class="col-md-6">
-				                        <label class="control-label">Pilihan E</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" id="jawaban" placeholder="Masukkan Jawaban E">
-				                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Kunci jawaban</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="btn-group">
-                                            <select name="jurusan" id="jurusan">
-                                                <option value="1">A</option>
-                                                <option value="2">B</option>
-                                                <option value="3">C</option>
-                                                <option value="4">D</option>
-                                                <option value="5">E</option>
-                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea class="form-control" name="soal" rows="8" placeholder="Masukkan Soal"></textarea>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan A</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_a" id="jawaban" placeholder="Masukkan Jawaban A">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan B</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_b" id="jawaban" placeholder="Masukkan Jawaban B">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan C</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_c" id="jawaban" placeholder="Masukkan Jawaban C">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan D</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_d" id="jawaban" placeholder="Masukkan Jawaban D">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan E</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_e" id="jawaban" placeholder="Masukkan Jawaban E">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Kunci jawaban</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="btn-group">
+                                                <select name="kunci" class="form-control">
+                                                    <option value="1">A</option>
+                                                    <option value="2">B</option>
+                                                    <option value="3">C</option>
+                                                    <option value="4">D</option>
+                                                    <option value="5">E</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                        <div class="input-group">
+                                            <label class="input-group-btn">
+                                                <span class="btn btn-primary">
+                                                    Browse&hellip; <input type="file" name="gmb" style="display: none;">
+                                                </span>
+                                            </label>
+                                            <input type="text" class="form-control" readonly>
                                         </div>
                                     </div>
-				                    <div class="col-md-6"></div>
-				                    <input type="file" name="img[]" class="file">
-								    <div class="input-group col-xs-6">
-								      	<span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-								      	<input type="text" class="form-control input-sm" disabled placeholder="Upload Image">
-								      	<span class="input-group-btn">
-								        	<button class="browse btn btn-primary input-sm" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
-								      </span>
-								    </div> 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                       				<button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                                </div>
-                            </div>          
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success" value="submit">Simpan</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     <!-- /.modal -->
                     </div>
+
                     <div class="modal fade" id="editsoal" role="dialog">
                         <div class="modal-dialog">
                           <!-- Modal content-->
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Edit Soal</h4>
-                                </div>
-                                <div class="modal-body">
-                                   	<div class="col-md-4">
-				                        <label class="control-label">Mata Pelajaran</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="btn-group">
-                                            <select name="jurusan" id="jurusan">
-                                                <option value="1">Bahasa Indonesia</option>
-                                                <option value="2">Bahasa Inggris</option>
-                                                <option value="3">Matematika</option>
-                                                <option value="4">Biologi</option>
-                                                <option value="5">Fisika</option>
-                                                <option value="6">Kimia</option>
-                                                <option value="7">Sosiologi</option>
-                                                <option value="8">Geografi</option>
-                                                <option value="9">Ekonomi</option>
-                                            </select>
-				                        </div>                             
-				                    </div>
-				        			<div class="col-md-4">
-				                        <label class="control-label">Soal</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <textarea class="form-control" rows="8" placeholder="Masukkan Soal"></textarea>   
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Kunci jawaban</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="btn-group">
-                                            <select name="jurusan" id="jurusan">
-                                                <option value="1">A</option>
-                                                <option value="2">B</option>
-                                                <option value="3">C</option>
-                                                <option value="4">D</option>
-                                                <option value="5">E</option>
-                                            </select>
-										</div>
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Pilihan A</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban A">
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Pilihan B</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban B">
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Pilihan C</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban C">
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Pilihan D</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban D">
-				                    </div>
-				                    <div class="col-md-4">
-				                        <label class="control-label">Pilihan E</label>                             
-				                    </div>
-				                    <div class="col-md-6">
-				                        <input type="text" class="form-control" placeholder="Masukkan Jawaban E">
-				                    </div>
-				                    <<div class="col-md-4"></div>
-				                    <input type="file" name="img[]" class="file">
-								    <div class="input-group col-xs-6">
-								      	<span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-								      	<input type="text" class="form-control input-sm" disabled placeholder="Upload Image">
-								      	<span class="input-group-btn">
-								        	<button class="browse btn btn-primary input-sm" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
-								      </span>
-								    </div> 
-	                                <div class="modal-footer">
-	                                    <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-	                       				<button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-	                                </div>
-                            	</div>          
-                        	</div>
+                                <form action="" id="form_edit_soal" method="get">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit Soal</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-6">
+                                            <label class="control-label">Mata Pelajaran</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="btn-group">
+                                            <#--<label class="control-label">Soal</label>-->
+                                                <select name="id_mapel" id="mapel" class="form-control">
+                                                    <option value="1">Bahasa Indonesia</option>
+                                                    <option value="2">Bahasa Inggris</option>
+                                                    <option value="3">Matematika</option>
+                                                    <option value="4">Biologi</option>
+                                                    <option value="5">Fisika</option>
+                                                    <option value="6">Kimia</option>
+                                                    <option value="7">Sosiologi</option>
+                                                    <option value="8">Geografi</option>
+                                                    <option value="9">Ekonomi</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Soal</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea class="form-control" rows="8" id="soal" name="soal" placeholder="Masukkan Soal"></textarea>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan A</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_a" id="jwb_a" placeholder="Masukkan Jawaban A">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan B</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_b" id="jwb_b" placeholder="Masukkan Jawaban B">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan C</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_c" id="jwb_c" placeholder="Masukkan Jawaban C">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan D</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_d" id="jwb_d" placeholder="Masukkan Jawaban D">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Pilihan E</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" name="pil_e" id="jwb_e" placeholder="Masukkan Jawaban E">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Kunci jawaban</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="btn-group">
+                                                <select name="kunci" id="kunci" class="form-control">
+                                                    <option value="1">A</option>
+                                                    <option value="2">B</option>
+                                                    <option value="3">C</option>
+                                                    <option value="4">D</option>
+                                                    <option value="5">E</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                        <div class="input-group">
+                                            <label class="input-group-btn">
+                                                <span class="btn btn-primary">
+                                                    Browse&hellip; <input type="file" id="gmb" name="gmb" style="display: none;">
+                                                </span>
+                                            </label>
+                                            <input type="text" id="path_gmb" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success" value="submit">Simpan</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
+                            </div>
                     	<!-- /.modal -->
                     	</div>
         			</div>
@@ -333,11 +338,13 @@
                                 <div class="modal-body">
                                     <p>Apakah anda yakin menghapus data siswa ?</p>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                                </div>
-                            </div>          
+                                <form action="" id="form_hapus_soal" method="post">
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     <!-- /.modal -->
                     </div>
@@ -353,19 +360,52 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(document).on('click', '.browse', function(){
-	  var file = $(this).parent().parent().parent().find('.file');
-	  file.trigger('click');
-	});
-	$(document).on('change', '.file', function(){
-	  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-	});
-</script>
 <script>
 $(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip(); 
+$('[data-toggle="tooltip"]').tooltip();
+    $(document).on('change', ':file', function() {
+        var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+
+    // We can watch for our custom `fileselect` event like this
+    $(document).ready( function() {
+        $(':file').on('fileselect', function(event, numFiles, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+            if( input.length ) {
+                input.val(log);
+            } else {
+                if( log ) alert(log);
+            }
+
+        });
+    });
 });
+
+function hapusSoal(id_soal) {
+    $("#form_hapus_soal").attr('action','/admin/data-soal/delete/'+id_soal);
+    $("#hapussoal").modal('show');
+}
+
+function editSoal(id_soal,id_mapel,soal,jwb_a,jwb_b,jwb_c, jwb_d,jwb_e,path_gmb,kunci) {
+    $("#form_edit_soal").attr('action','/admin/data-soal/edit/'+id_soal);
+    $("#editsoal").modal('show');
+    $("#mapel").val(id_mapel);
+    $("#soal").val(soal);
+    $("#jwb_a").val(jwb_a);
+    $("#jwb_b").val(jwb_b);
+    $("#jwb_c").val(jwb_c);
+    $("#jwb_d").val(jwb_d);
+    $("#jwb_e").val(jwb_e);
+    $("#gmb").val(path_gmb);
+    $("#path_gmb").val(path_gmb);
+    $("#kunci").val(kunci);
+}
 </script>
 
 </body>
