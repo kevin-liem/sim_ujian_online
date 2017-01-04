@@ -1,4 +1,4 @@
-package com.kvn.ujianonline.controller;
+package com.kvn.ujianonline.controller.admin;
 
 import com.kvn.ujianonline.dao.DaoSoal;
 import com.kvn.ujianonline.model.Soal;

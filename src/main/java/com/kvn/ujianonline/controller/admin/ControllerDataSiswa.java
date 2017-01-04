@@ -1,4 +1,4 @@
-package com.kvn.ujianonline.controller;
+package com.kvn.ujianonline.controller.admin;
 
 import com.kvn.ujianonline.dao.DaoUser;
 import org.springframework.beans.factory.annotation.Autowired;

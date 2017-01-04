@@ -1,4 +1,4 @@
-package com.kvn.ujianonline.controller;
+package com.kvn.ujianonline.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

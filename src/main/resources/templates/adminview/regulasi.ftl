@@ -99,17 +99,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <#list regulasiList as regulasi>
                                     <tr>
-                                        <td>
-                                            <label class="control-label"> 
-                                                <input type="radio" name="group" value="option1" checked> Diijinkan       
-                                            </label>
-                                            <label class="control-label"> 
-                                                <input type="radio" name="group" value="option1" >Tidak Diijinkan       
-                                            </label>
+                                        <form action="" id="form_edit_regulasi" method="get">
+                                        <td onload="showRegulasi('${regulasi.id_user}','${regulasi.hak_akses}')">
+                                            <select name="hak_akses" id="hak_akses" class="form-control">
+                                                <option value="1">Diizinkan</option>
+                                                <option value="0">Tidak Diizinkan</option>
+                                            </select>
                                         </td>
-                                        <td>1265</td>
+                                        </form>
+                                        <td>${regulasi.nisn}</td>
                                     </tr>
+                                </#list>
                                 </tbody>
                             </table>
                         </div>
@@ -127,5 +129,16 @@
     <script src="/js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            $("#hak_akses").val(${regulasiList.id_user});
+        });
+
+        function showRegulasi(id_user,hak_akses) {
+
+//            $("#form_edit_regulasi").attr('action','/admin/regulasi/edit/'+id_user);
+//            $("#option").attr('type','submit');
+        }
     </body>
 </html>
