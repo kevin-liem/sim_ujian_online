@@ -101,15 +101,15 @@
                                 <tbody>
                                 <#list regulasiList as regulasi>
                                     <tr>
-                                        <form action="" id="form_edit_regulasi" method="get">
-                                        <td onload="showRegulasi('${regulasi.id_user}','${regulasi.hak_akses}')">
-                                            <select name="hak_akses" id="hak_akses" class="form-control">
+                                        <input type="hidden" name="status_siswa" value="${regulasi.status_siswa}">
+                                        <td>
+                                            <select name="regulasi" class="form-control">
                                                 <option value="1">Diizinkan</option>
                                                 <option value="0">Tidak Diizinkan</option>
                                             </select>
                                         </td>
-                                        </form>
                                         <td>${regulasi.nisn}</td>
+                                        <p></p>
                                     </tr>
                                 </#list>
                                 </tbody>
@@ -130,15 +130,17 @@
         <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     <script>
+
+        var x = document.getElementsByName("status_siswa");
+        for(var i=0;i<x.length;i++){
+            var y = x[i].value;
+            document.getElementsByName("regulasi")[i].value = y;
+        }
+
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
-            $("#hak_akses").val(${regulasiList.id_user});
         });
 
-        function showRegulasi(id_user,hak_akses) {
-
-//            $("#form_edit_regulasi").attr('action','/admin/regulasi/edit/'+id_user);
-//            $("#option").attr('type','submit');
-        }
+    </script>
     </body>
 </html>

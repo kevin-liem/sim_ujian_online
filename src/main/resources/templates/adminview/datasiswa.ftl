@@ -98,10 +98,10 @@
                                 <td>${user.nisn}</td>
                                 <td>${user.username}</td>
                                 <td>${user.jurusan}</td>
-                                <input type="hidden" id="siswa" value="${user.status_siswa}">
-                                <td id="status_siswa"></td>
-                                <input type="hidden" id="ujian" value="${user.status_ujian}">
-                                <td id="status_ujian"></td>
+                                <input type="hidden" name="siswa" value="${user.status_siswa}">
+                                <td><p1></p1></td>
+                                <input type="hidden" name="ujian" value="${user.status_ujian}">
+                                <td><p2></p2></td>
                                 <td>
                                     <button class="btn btn-warning btn-sm" onclick="editUser('${user.nisn}','${user.username}','${user.jurusan}','${user.password}','${user.status_siswa}','${user.status_ujian}')" title="Edit Siswa"><i class="glyphicon glyphicon-pencil"></i></button>
                                     <button class="btn btn-danger btn-sm" onclick="hapusUser(${user.id_user})" title="Hapus Siswa"><i class="glyphicon glyphicon-remove"></i></button>
@@ -242,7 +242,7 @@
                                     <h4 class="modal-title">Hapus Siswa</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Apakah anda yakin menghapus data siswa ?</p>
+                                    <h5>Apakah anda yakin menghapus data siswa ?</h5>
                                 </div>
                                 <form action="" id="form_hapus_user" method="post">
                                     <div class="modal-footer">
@@ -271,18 +271,22 @@
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();
 });
+var x1 = document.getElementsByName("siswa");
+var x2 = document.getElementsByName("ujian");
+for(var i=0;i<x1.length;i++){
+    var y1 = x1[i].value;
+    var y2 = x2[i].value;
+    if(y1==0){
+        document.getElementsByTagName("p1")[i].innerHTML = "Tidak Diizinkan";
+    }else{
+        document.getElementsByTagName("p1")[i].innerHTML = "Diizinkan";
+    }
+    if(y2==0){
+        document.getElementsByTagName("p2")[i].innerHTML = "Belum Ujian";
+    }else{
+        document.getElementsByTagName("p2")[i].innerHTML = "Telah Ujian";
+    }
 
-var td1 = (document.getElementById("ujian")).value;
-var td2 = (document.getElementById("siswa")).value;
-if(td1 == 0){
-    document.getElementById("status_ujian").innerHTML = "Belum Ujian";
-}else {
-    document.getElementById("status_ujian").innerHTML = "Telah Ujian";
-}
-if(td2 == 0){
-    document.getElementById("status_siswa").innerHTML = "Tidak Diizinkan";
-}else {
-    document.getElementById("status_siswa").innerHTML  = "Diizinkan";
 }
 
 function hapusUser(id) {
