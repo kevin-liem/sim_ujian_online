@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2017 at 04:09 PM
+-- Generation Time: Jan 05, 2017 at 02:02 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -51,9 +51,24 @@ CREATE TABLE IF NOT EXISTS `lognilai` (
   `id_log` bigint(20) NOT NULL,
   `nisn` varchar(11) DEFAULT NULL,
   `username` varchar(30) NOT NULL,
-  `id_mapel` int(1) NOT NULL,
-  `nilai` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `bind` int(3) NOT NULL,
+  `bing` int(3) NOT NULL,
+  `mat` int(3) NOT NULL,
+  `bio` int(3) NOT NULL,
+  `fis` int(3) NOT NULL,
+  `kim` int(3) NOT NULL,
+  `sos` int(3) NOT NULL,
+  `geo` int(3) NOT NULL,
+  `eko` int(3) NOT NULL,
+  `id_mapel` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lognilai`
+--
+
+INSERT INTO `lognilai` (`id_log`, `nisn`, `username`, `bind`, `bing`, `mat`, `bio`, `fis`, `kim`, `sos`, `geo`, `eko`, `id_mapel`) VALUES
+(7, '2103141057', 'Novan Andhy Trianto', 98, 98, 98, 98, 98, 98, 98, 98, 98, NULL);
 
 -- --------------------------------------------------------
 
@@ -211,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `jurusan` varchar(3) DEFAULT NULL,
   `status_siswa` int(1) NOT NULL DEFAULT '1',
   `status_ujian` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -220,7 +235,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id_user`, `nisn`, `password`, `hak_akses`, `username`, `jurusan`, `status_siswa`, `status_ujian`) VALUES
 (3, '2103141057', 'qwe', 0, 'Novan Andhy Trianto', 'IPA', 1, 0),
 (4, '', 'admin', 1, 'admin', '', 0, 0),
-(9, '2103141055', 'qwe', 0, 'kevin', 'IPS', 0, 0);
+(9, '2103141055', 'qwe', 0, 'kevin', 'IPS', 0, 0),
+(10, '2103141061', 'qwe', 0, 'Tono', 'IPA', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -269,7 +285,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT for table `lognilai`
 --
 ALTER TABLE `lognilai`
-  MODIFY `id_log` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_log` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `mapel`
 --
@@ -284,7 +300,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id_user` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

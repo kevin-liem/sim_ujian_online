@@ -20,14 +20,35 @@ public class Lognilai {
 	private Long id_log;
 
 	@Column
-	private int id_mapel;
-
-	@Column
 	private String nisn;
-	
-	@Column
-	private int nilai;
 
 	@Column
 	private String username;
+
+	@Column
+	private int bind;
+
+	@Column
+	private int bing;
+
+	@Column
+	private int mat;
+
+	@Column
+	private int bio;
+
+	@Column
+	private int fis;
+
+	@Column
+	private int kim;
+
+	@Column
+	private int sos;
+
+	@Column
+	private int geo;
+
+	@Column
+	private int eko;
 }

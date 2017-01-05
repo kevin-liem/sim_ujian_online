@@ -99,16 +99,16 @@
                                     <#list nilailist as nilai>
                                     <tr>
                                         <td>${nilai.nisn}</td>
-                                        <td>Novan Andhy Trianto</td>
-                                        <td>90</td>
-                                        <td>98</td>
-                                        <td>88</td>
-                                        <td>87</td>
-                                        <td>87</td>
-                                        <td>87</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>${nilai.username}</td>
+                                        <td>${nilai.bind}</td>
+                                        <td>${nilai.bing}</td>
+                                        <td>${nilai.mat}</td>
+                                        <td>${nilai.bio}</td>
+                                        <td>${nilai.fis}</td>
+                                        <td>${nilai.kim}</td>
+                                        <td>${nilai.sos}</td>
+                                        <td>${nilai.eko}</td>
+                                        <td>${nilai.geo}</td>
                                     </tr>
                                     </#list>
                                 </tbody>
