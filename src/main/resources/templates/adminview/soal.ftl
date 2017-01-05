@@ -333,10 +333,10 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Hapus Siswa</h4>
+                                    <h4 class="modal-title">Hapus Soal</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Apakah anda yakin menghapus data siswa ?</p>
+                                    <p>Apakah anda yakin menghapus soal ?</p>
                                 </div>
                                 <form action="" id="form_hapus_soal" method="post">
                                     <div class="modal-footer">
