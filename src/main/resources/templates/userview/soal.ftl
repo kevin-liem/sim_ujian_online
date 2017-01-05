@@ -60,28 +60,28 @@
                             <h3 style="text-align: center;color: #000">Jawaban</h3>
                             <form action="">
                                 <div class="radio">
-                                    <label><input type="radio" name="pilihan" name="a">
+                                    <label><input id="radioA" type="radio" name="pilihan">
                                         <#--<span id="jwb_a">A. ${soal.jwb_a}</span>-->
                                         <span id="jwb_a"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="pilihan" name="b">
+                                    <label><input id="radioB" type="radio" name="pilihan">
                                         <span id="jwb_b"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="pilihan" name="c">
+                                    <label><input id="radioC" type="radio" name="pilihan">
                                         <span id="jwb_c"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="pilihan" name="d">
+                                    <label><input id="radioD" type="radio" name="pilihan">
                                         <span id="jwb_d"></span>
                                     </label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="pilihan" name="e">
+                                    <label><input id="radioE" type="radio" name="pilihan">
                                         <span id="jwb_e"></span>
                                     </label>
                                 </div>
@@ -130,7 +130,14 @@
         </#list>
     ];
 
+    var jmlSoal = 10;
     var indexSoal = 0;
+
+    // Store temp answer in int number
+    var tempJawaban = [];
+    for(var i=0;i<jmlSoal;i++){
+        tempJawaban[i]=0;
+    }
 
     // Check if there is image available
     if(listSoal[indexSoal].pathGambar != "/"){
@@ -151,9 +158,45 @@
     // Pagination input textbox
     $("#id_soal").value = indexSoal + 1;
 
+//    $("#radioA, #radioB, #radioC, #radioD, #radioE").change(function () {
+//        if ($("#radioA").is(":checked")) {
+//            tempJawaban[indexSoal] = 1;
+//        }
+//        else if ($("#radioB").is(":checked")) {
+//            tempJawaban[indexSoal] = 2;
+//        }
+//        else if ($("#radioC").is(":checked")) {
+//            tempJawaban[indexSoal] = 3;
+//        }
+//        else if ($("#radioD").is(":checked")) {
+//            tempJawaban[indexSoal] = 4;
+//        }
+//        else if ($("#radioE").is(":checked")) {
+//            tempJawaban[indexSoal] = 5;
+//        }
+//    });
+
     $("#button_next").click(function(){
-        if(indexSoal + 1 < 10)
+        if(indexSoal + 1 < jmlSoal) {
+            // Save answer
+            if ($("#radioA").is(":checked")) {
+                tempJawaban[indexSoal] = 1;
+            }
+            else if ($("#radioB").is(":checked")) {
+                tempJawaban[indexSoal] = 2;
+            }
+            else if ($("#radioC").is(":checked")) {
+                tempJawaban[indexSoal] = 3;
+            }
+            else if ($("#radioD").is(":checked")) {
+                tempJawaban[indexSoal] = 4;
+            }
+            else if ($("#radioE").is(":checked")) {
+                tempJawaban[indexSoal] = 5;
+            }
+
             indexSoal += 1;
+        }
         else
             return;
 
@@ -172,14 +215,73 @@
         $("#jwb_c").text("C. " + listSoal[indexSoal].jwbC);
         $("#jwb_d").text("D. " + listSoal[indexSoal].jwbD);
         $("#jwb_e").text("E. " + listSoal[indexSoal].jwbE);
+
+        // Determine which radio button should be checked
+        // No radio button checked yet (Initialize as no answer
+//            $("#radioA").attr('checked', false);
+//            $("#radioB").attr('checked', false);
+//            $("#radioC").attr('checked', false);
+//            $("#radioD").attr('checked', false);
+//            $("#radioE").attr('checked', false);
+
+        // If saved answer is A
+        if(tempJawaban[indexSoal] == 1){
+            $("#radioA").attr('checked', true); // Checked for A answer
+        }
+
+        // If saved answer is B
+        else if(tempJawaban[indexSoal] == 2){
+            $("#radioB").attr('checked', true); // Checked for B answer
+        }
+
+        // If saved answer is C
+        else if(tempJawaban[indexSoal] == 3){
+            $("#radioC").attr('checked', true); // Checked for C answer
+        }
+
+        // If saved answer is D
+        else if(tempJawaban[indexSoal] == 4){
+            $("#radioD").attr('checked', true); // Checked for D answer
+        }
+
+        // If saved answer is E
+        else if(tempJawaban[indexSoal] == 5){
+            $("#radioE").attr('checked', true); // Checked for E answer
+        }
+
+        else {
+            $("#radioA").attr('checked', false);
+            $("#radioB").attr('checked', false);
+            $("#radioC").attr('checked', false);
+            $("#radioD").attr('checked', false);
+            $("#radioE").attr('checked', false);
+        }
 
         // Pagination number
         $("#id_soal").value = indexSoal + 1;
     });
 
     $("#button_prev").click(function(){
-        if(indexSoal - 1 >= 0)
+        if(indexSoal - 1 >= 0) {
+            // Save answer
+            if ($("#radioA").is(":checked")) {
+                tempJawaban[indexSoal] = 1;
+            }
+            else if ($("#radioB").is(":checked")) {
+                tempJawaban[indexSoal] = 2;
+            }
+            else if ($("#radioC").is(":checked")) {
+                tempJawaban[indexSoal] = 3;
+            }
+            else if ($("#radioD").is(":checked")) {
+                tempJawaban[indexSoal] = 4;
+            }
+            else if ($("#radioE").is(":checked")) {
+                tempJawaban[indexSoal] = 5;
+            }
+
             indexSoal -= 1;
+        }
         else
             return;
 
@@ -199,8 +301,70 @@
         $("#jwb_d").text("D. " + listSoal[indexSoal].jwbD);
         $("#jwb_e").text("E. " + listSoal[indexSoal].jwbE);
 
+        // Determine which radio button should be checked
+        // No radio button checked yet (Initialize as no answer
+//        $("#radioA").attr('checked', false);
+//        $("#radioB").attr('checked', false);
+//        $("#radioC").attr('checked', false);
+//        $("#radioD").attr('checked', false);
+//        $("#radioE").attr('checked', false);
+
+        // If saved answer is A
+        if(tempJawaban[indexSoal] == 1){
+            alert("Radio A Checked");
+            $("#radioA").attr('checked', true); // Checked for A answer
+        }
+
+        // If saved answer is B
+        else if(tempJawaban[indexSoal] == 2){
+            alert("Radio B Checked");
+            $("#radioB").attr('checked', true); // Checked for B answer
+        }
+
+        // If saved answer is C
+        else if(tempJawaban[indexSoal] == 3){
+            alert("Radio C Checked");
+            $("#radioC").attr('checked', true); // Checked for C answer
+        }
+
+        // If saved answer is D
+        else if(tempJawaban[indexSoal] == 4){
+            alert("Radio D Checked");
+            $("#radioD").attr('checked', true); // Checked for D answer
+        }
+
+        // If saved answer is E
+        else if(tempJawaban[indexSoal] == 5){
+            alert("Radio E Checked");
+            $("#radioE").attr('checked', true); // Checked for E answer
+        }
+
+        else {
+            $("#radioA").attr('checked', false);
+            $("#radioB").attr('checked', false);
+            $("#radioC").attr('checked', false);
+            $("#radioD").attr('checked', false);
+            $("#radioE").attr('checked', false);
+        }
+
         // Pagination number
         $("#id_soal").value = indexSoal + 1;
+    });
+
+    // Score each subjects
+    var nilai;
+    $("#button_submit").click(function () {
+        var jwbBenar = 0;
+        for(var i=0;i<jmlSoal;i++){
+            if(listSoal[i].kunciJwb == tempJawaban[i]){
+                jwbBenar++;
+            }
+        }
+
+        // Final score
+        nilai = jwbBenar / jmlSoal * 100;
+
+        alert(tempJawaban);
     });
 </script>
 </body>
