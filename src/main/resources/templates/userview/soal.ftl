@@ -354,6 +354,23 @@
     // Score each subjects
     var nilai;
     $("#button_submit").click(function () {
+        // Save current answer
+        if ($("#radioA").is(":checked")) {
+            tempJawaban[indexSoal] = 1;
+        }
+        else if ($("#radioB").is(":checked")) {
+            tempJawaban[indexSoal] = 2;
+        }
+        else if ($("#radioC").is(":checked")) {
+            tempJawaban[indexSoal] = 3;
+        }
+        else if ($("#radioD").is(":checked")) {
+            tempJawaban[indexSoal] = 4;
+        }
+        else if ($("#radioE").is(":checked")) {
+            tempJawaban[indexSoal] = 5;
+        }
+
         var jwbBenar = 0;
         for(var i=0;i<jmlSoal;i++){
             if(listSoal[i].kunciJwb == tempJawaban[i]){
@@ -364,7 +381,9 @@
         // Final score
         nilai = jwbBenar / jmlSoal * 100;
 
-        alert(tempJawaban);
+        alert("Id mapel = " + ${idMapel} +
+                        "\nTipe Soal = " + ${tipeSoal} +
+                        "\nNilai = " + jwbBenar + " / " + jmlSoal + " * " + 100 + " = " + nilai);
     });
 </script>
 </body>

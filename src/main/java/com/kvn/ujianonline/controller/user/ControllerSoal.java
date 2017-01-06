@@ -79,7 +79,8 @@ public class ControllerSoal {
 
 		Integer nisnInteger = new Integer(nisn);
 		int indexTipeSoal = nisnInteger % 5;	// 0=0; 1=1; 2=2; 3=3; 4=4; 5=0; 6=1; 7=2; 8=3; 9=4;
-		List<Soal> listSoal = daoSoal.findById_mapel(5);
+		int idMapel = 5;
+		List<Soal> listSoal = daoSoal.findById_mapel(idMapel);
 
 		List<Soal> randomListSoal = new LinkedList<Soal>();
 		while (!listSoal.isEmpty()){
@@ -92,6 +93,8 @@ public class ControllerSoal {
 			}
 		}
 
+		model.addAttribute("idMapel", idMapel);
+		model.addAttribute("tipeSoal", indexTipeSoal);
 		model.addAttribute("listSoal", randomListSoal);
 		return "/userview/soal";
 	}
