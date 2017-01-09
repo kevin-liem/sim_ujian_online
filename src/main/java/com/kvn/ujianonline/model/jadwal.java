@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,19 +21,21 @@ import java.sql.Time;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class jadwal {
+public class Jadwal {
     @Id
     @GeneratedValue
     private long id;
 
     @Column
+    private int id_mapel;
+
+    @Column
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date tanggal;
 
     @Column
-    private Time jam;
-
-    @Column
-    private int id_mapel;
+    @DateTimeFormat(pattern = "HH:mm")
+    private Time waktu;
 
 
 }

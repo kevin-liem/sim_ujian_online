@@ -103,15 +103,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <#list jadwalList as jadwal>
                             <tr>
-                                <td>21/12/2012</td>
-                                <td>08:00</td>
-                                <td>Matematika</td>
+                                <td>${jadwal.tanggal}</td>
+                                <td>${jadwal.waktu}</td>
+                                <input type="hidden" name="mapel" value="${jadwal.id_mapel}">
+                                <td><p1></p1></td>
                                 <td>
                                     <a href="#" data-toggle="tooltip" title="Edit jadwal"><button class="btn btn-warning btn-sm glyphicon glyphicon-pencil" data-toggle="modal" data-target="#editjadwal"></button></a>
                                     <a href="#" data-toggle="tooltip" title="Hapus jadwal"><button class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-toggle="modal" data-target="#hapusjadwal"></button></a>
                                 </td>
                             </tr>
+                        </#list>
                         </tbody>
                     </table>
 
@@ -123,7 +126,7 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Tambah Jadwal</h4>
                                 </div>
-                                <form>
+                                <form action="/admin/jadwal/save" method="post">
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -138,34 +141,29 @@
                                                 <label class="control-label">Waktu Ujian</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="time" name="tanggal">
+                                                <input type="time" name="waktu">
                                             </div>
                                         </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <label class="control-label">Mata Pelajaran</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-                                                            <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="#">Bahasa Indonesia</a></li>
-                                                            <li><a href="#">Bahasa Inggris</a></li>
-                                                            <li><a href="#">Matematika</a></li>
-                                                            <li><a href="#">Fisika</a></li>
-                                                            <li><a href="#">Biologi</a></li>
-                                                            <li><a href="#">Kimia</a></li>
-                                                            <li><a href="#">Sosiologi</a></li>
-                                                            <li><a href="#">Ekonomi</a></li>
-                                                            <li><a href="#">Geografi</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Mata Pelajaran</label>
                                             </div>
+                                            <div class="col-md-6">
+                                                <select name="id_mapel" id="mapel" class="form-control">
+                                                    <option value="1">Bahasa Indonesia</option>
+                                                    <option value="2">Bahasa Inggris</option>
+                                                    <option value="3">Matematika</option>
+                                                    <option value="4">Biologi</option>
+                                                    <option value="5">Fisika</option>
+                                                    <option value="6">Kimia</option>
+                                                    <option value="7">Sosiologi</option>
+                                                    <option value="8">Geografi</option>
+                                                    <option value="9">Ekonomi</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                            <button type="submit" class="btn btn-success" value="submit">Simpan</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                         </div>
                                     </div>
@@ -174,15 +172,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="editjadwal" role="dialog">
+
+                    <div class="modal fade" id="editJadwal" role="dialog">
                         <div class="modal-dialog">
-                          <!-- Modal content-->
+                            <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Tambah Jadwal</h4>
+                                    <h4 class="modal-title">Edit Jadwal</h4>
                                 </div>
-                                <form>
+                                <form action="/admin/jadwal/save" method="post">
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -197,41 +196,38 @@
                                                 <label class="control-label">Waktu Ujian</label>
                                             </div>
                                             <div class="col-md-4">
-                                                <input type="time" name="tanggal">
+                                                <input type="time" name="waktu">
                                             </div>
                                         </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <label class="control-label">Mata Pelajaran</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Mapel
-                                                            <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="#">Bahasa Indonesia</a></li>
-                                                            <li><a href="#">Bahasa Inggris</a></li>
-                                                            <li><a href="#">Matematika</a></li>
-                                                            <li><a href="#">Fisika</a></li>
-                                                            <li><a href="#">Biologi</a></li>
-                                                            <li><a href="#">Kimia</a></li>
-                                                            <li><a href="#">Sosiologi</a></li>
-                                                            <li><a href="#">Ekonomi</a></li>
-                                                            <li><a href="#">Geografi</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Mata Pelajaran</label>
                                             </div>
+                                            <div class="col-md-6">
+                                                <select name="id_mapel" id="mapel" class="form-control">
+                                                    <option value="1">Bahasa Indonesia</option>
+                                                    <option value="2">Bahasa Inggris</option>
+                                                    <option value="3">Matematika</option>
+                                                    <option value="4">Biologi</option>
+                                                    <option value="5">Fisika</option>
+                                                    <option value="6">Kimia</option>
+                                                    <option value="7">Sosiologi</option>
+                                                    <option value="8">Geografi</option>
+                                                    <option value="9">Ekonomi</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                                            <button type="submit" class="btn btn-success" value="submit">Simpan</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Tidak</button>
                                         </div>
                                     </div>
                                 </form>
+                                <!-- /.modal -->
                             </div>
                         </div>
                     </div>
+
                     <!-- /.modal -->
                     <div class="modal fade" id="hapusjadwal" role="dialog">
                         <div class="modal-dialog">
@@ -269,6 +265,30 @@
     $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
     });
+
+    var x = document.getElementsByName("mapel");
+    for(var i=0;i<x.length;i++){
+        var y = x[i].value;
+        if(y==1){
+            document.getElementsByTagName("p1")[i].innerHTML = "Bahasa Indonesia";
+        }else if(y==2){
+            document.getElementsByTagName("p1")[i].innerHTML = "Bahas Inggris";
+        }else if(y==3){
+            document.getElementsByTagName("p1")[i].innerHTML = "Matematika";
+        }else if(y==4){
+            document.getElementsByTagName("p1")[i].innerHTML = "Biologi";
+        }else if(y==5){
+            document.getElementsByTagName("p1")[i].innerHTML = "Fisika";
+        }else if(y==6){
+            document.getElementsByTagName("p1")[i].innerHTML = "Kimia";
+        }else if(y==7){
+            document.getElementsByTagName("p1")[i].innerHTML = "Sosiologi";
+        }else if(y==9){
+            document.getElementsByTagName("p1")[i].innerHTML = "Geografi";
+        }else{
+            document.getElementsByTagName("p1")[i].innerHTML = "Ekonomi";
+        }
+    }
     </script>
 </body>
 
