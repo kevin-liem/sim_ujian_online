@@ -244,7 +244,6 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                            <#--<label class="control-label">Soal</label>-->
                                                 <select name="id_mapel" id="mapel" class="form-control">
                                                     <option value="1">Bahasa Indonesia</option>
                                                     <option value="2">Bahasa Inggris</option>
