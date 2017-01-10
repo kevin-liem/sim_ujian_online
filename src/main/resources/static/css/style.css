@@ -1,4 +1,3 @@
-
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
@@ -158,6 +157,15 @@ img { max-width: 100%; }
 .form-list-jawab form {
 	margin: 10px;
 }
+
+.form-list-button{
+	margin: 0;
+	width: 100%;
+	float: left;
+	overflow-y: auto;
+	height: 10%;
+}
+
 .form-top {
 	overflow: hidden;
 	padding: 0 25px 15px 25px;
@@ -250,6 +258,7 @@ img { max-width: 100%; }
 	position: absolute;
 	bottom: 6px;
 	color: black;
+	margin-left: 39%;
 }
 
 label{
@@ -290,7 +299,6 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 	border-left-width: 0;
 	width:40px;
 	float:left;
-	min-height: auto;
 	*min-height: 20px;
 }
 

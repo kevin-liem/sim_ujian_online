@@ -51,8 +51,8 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box well">
                     <div class="form-bottom">
-                        <div class="alert alert-danger">
-                            <p style="text-align: center; font-size: 14pt;"><strong>Belum</strong> ada ujian yang berlangsung</p>
+                        <div class="alert alert-success">
+                            <p style="text-align: center; font-size: 14pt;"><strong>Sudah</strong> ada ujian yang berlangsung</p>
                         </div>
                         <div class="alert alert-border-only">
                             <p style="text-align: center; font-size: 14pt;">Mata pelajaran yang akan diujikan</p>
@@ -62,7 +62,7 @@
                             <p style="text-align: center; font-size: 14pt;">Hitung mundur</p>
                             <p style="text-align: center; font-size: 14pt;"><strong style="font-size: 20pt;" id="timecountdown"></strong></p>
                         </div>
-                        <div style="margin: auto;margin-left: 180px">
+                        <div style="margin: auto;margin-left: 150px">
                             <a href="/userview/soal" class="btn btn-primary active">Mulai Ujian</a>
                             <a href="/"" class="btn btn-default active">Keluar</a>
                         </div>

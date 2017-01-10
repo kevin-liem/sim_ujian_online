@@ -87,15 +87,15 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="form-list-button">
+                            <ul class="pagination center-pagination">
+                                <li><button class="btn btn-default" id="button_prev">Prev</button></li>
+                                <li><input type="number" name="page" id="id_soal" min="1" max="20" style="width: 63px;" ></li>
+                                <li><button class="btn btn-default" id="button_next">Next</button></li>
+                            </ul>
+                        </div>
+
                     </div>
-                    <ul class="pagination center-pagination">
-                        <li><button id="button_prev">Prev</button></li>
-                        <li><input type="number" name="page" id="id_soal" min="1" max="20" style="width: 63px;" ></li>
-                        <li><button id="button_next">Next</button></li>
-                    </ul>
-                    <form action="">
-                        <button id="button_submit">Submit</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -381,9 +381,32 @@
         // Final score
         nilai = jwbBenar / jmlSoal * 100;
 
-        alert("Id mapel = " + ${idMapel} +
+        // print mapel
+        var print_idmapel;
+        var id_mapel = ${idMapel};
+        if(id_mapel==1){
+            print_idmapel = "Bahasa Indonesia";
+        }else if(id_mapel==2){
+            print_idmapel = "Bahas Inggris";
+        }else if(id_mapel==3){
+            print_idmapel = "Matematika";
+        }else if(id_mapel==4){
+            print_idmapel = "Biologi";
+        }else if(id_mapel==5){
+            print_idmapel = "Fisika";
+        }else if(id_mapel==6){
+            print_idmapel = "Kimia";
+        }else if(id_mapel==7){
+            print_idmapel = "Sosiologi";
+        }else if(id_mapel==9){
+            print_idmapel = "Geografi";
+        }else{
+            print_idmapel = "Ekonomi";
+        }
+        alert("Id mapel = " + print_idmapel +
                         "\nTipe Soal = " + ${tipeSoal} +
-                        "\nNilai = " + jwbBenar + " / " + jmlSoal + " * " + 100 + " = " + nilai);
+                        "\nNilai = " + nilai);
+        window.location = "/";
     });
 </script>
 </body>
