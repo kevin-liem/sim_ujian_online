@@ -4,7 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.crypto.Data;
 
+import com.kvn.ujianonline.dao.DaoLogNilai;
 import com.kvn.ujianonline.dao.DaoUser;
+import com.kvn.ujianonline.model.Lognilai;
 import com.kvn.ujianonline.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +37,9 @@ public class ControllerSoal {
 	
 	@Autowired
 	DaoUser daoUser;
+
+	@Autowired
+	DaoLogNilai daoLogNilai;
 
 	@GetMapping(value="/")
 	public String Login(Model model){
@@ -96,20 +101,42 @@ public class ControllerSoal {
 		model.addAttribute("idMapel", idMapel);
 		model.addAttribute("tipeSoal", indexTipeSoal);
 		model.addAttribute("listSoal", randomListSoal);
+
+		session.setAttribute("idMapel", idMapel);
 		return "/userview/soal";
 	}
-	
-	@RequestMapping(value="/soaljson/{id_soal}")
-	@ResponseBody
-	public Soal getSoal(@PathVariable Long id_soal){
-		Soal soal = daoSoal.findOne(id_soal);
-		return soal;
-	}
 
-	@RequestMapping(value="/listsoaljson/{id_mapel}")
-	@ResponseBody
-	public List<Soal> getSoalByIdMapel(@PathVariable Integer id_mapel){
-		List<Soal> listSoal = daoSoal.findById_mapel(id_mapel);
-		return listSoal;
+	@RequestMapping(value = "/userview/soal/simpan/{nisn}", method = RequestMethod.POST)
+	public String submit (
+			@PathVariable String nisn,
+			@RequestParam("nilai") int nilai,
+			@RequestParam("mapel") int id_mapel,
+			HttpServletRequest request,
+			Model model
+	){
+		model.addAttribute("idMapel", id_mapel);
+		model.addAttribute("nilai", nilai);
+		Lognilai oldNilai = daoLogNilai.findByNisn(nisn);
+		if(id_mapel == 1){
+			oldNilai.setBind(nilai);
+		}else if(id_mapel == 2){
+			oldNilai.setBing(nilai);
+		}else if(id_mapel == 3){
+			oldNilai.setMat(nilai);
+		}else if(id_mapel == 4){
+			oldNilai.setBio(nilai);
+		}else if(id_mapel == 5){
+			oldNilai.setFis(nilai);
+		}else if(id_mapel == 6){
+			oldNilai.setKim(nilai);
+		}else if(id_mapel == 7){
+			oldNilai.setSos(nilai);
+		}else if(id_mapel == 8){
+			oldNilai.setGeo(nilai);
+		}else if(id_mapel == 9){
+			oldNilai.setEko(nilai);
+		}
+		daoLogNilai.save(oldNilai);
+		return "/userview/hasil";
 	}
 }
