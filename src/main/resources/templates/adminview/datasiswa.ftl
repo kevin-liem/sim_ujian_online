@@ -104,7 +104,7 @@
                                 <td><p2></p2></td>
                                 <td>
                                     <button class="btn btn-warning btn-sm" onclick="editUser('${user.nisn}','${user.username}','${user.jurusan}','${user.password}','${user.status_siswa}','${user.status_ujian}')" title="Edit Siswa"><i class="glyphicon glyphicon-pencil"></i></button>
-                                    <button class="btn btn-danger btn-sm" onclick="hapusUser(${user.id_user})" title="Hapus Siswa"><i class="glyphicon glyphicon-remove"></i></button>
+                                    <button class="btn btn-danger btn-sm" onclick="hapusUser(${user.nisn})" title="Hapus Siswa"><i class="glyphicon glyphicon-remove"></i></button>
                                 </td>
                             </tr>
                         </#list>
@@ -289,8 +289,8 @@ for(var i=0;i<x1.length;i++){
 
 }
 
-function hapusUser(id) {
-    $("#form_hapus_user").attr('action','/admin/data-siswa/delete/'+id);
+function hapusUser(nisn) {
+    $("#form_hapus_user").attr('action','/admin/data-siswa/delete/'+nisn);
     $("#hapusiswa").modal('show');
 }
 function editUser(nisn,username,jurusan,password,status_siswa, status_ujian) {

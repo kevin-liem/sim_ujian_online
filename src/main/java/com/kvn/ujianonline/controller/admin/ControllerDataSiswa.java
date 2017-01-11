@@ -86,9 +86,10 @@ public class ControllerDataSiswa {
         return "redirect:/admin/data-siswa";
     }
 
-    @RequestMapping(value = "/admin/data-siswa/delete/{id_user}", method = RequestMethod.POST)
-    public String delete(@PathVariable String id_user){
-        daoUser.delete(Long.parseLong(id_user));
+    @RequestMapping(value = "/admin/data-siswa/delete/{nisn}", method = RequestMethod.POST)
+    public String delete(@PathVariable String nisn){
+        daoUser.deleteByNisn(nisn);
+        daoLogNilai.deleteByNisn(nisn);
         return "redirect:/admin/data-siswa";
     }
 }

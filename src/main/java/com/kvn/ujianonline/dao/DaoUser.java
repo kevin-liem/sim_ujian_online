@@ -4,6 +4,7 @@ import com.kvn.ujianonline.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 public interface DaoUser extends JpaRepository<User, Long>{
@@ -13,4 +14,7 @@ public interface DaoUser extends JpaRepository<User, Long>{
 
 	@Query(value = "SELECT * FROM user WHERE hak_akses =0", nativeQuery = true)
 	List<User> getAll();
+
+	@Transactional
+	Long deleteByNisn(String nisn);
 }
