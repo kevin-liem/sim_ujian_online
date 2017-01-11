@@ -57,17 +57,21 @@ public class ControllerSoal {
 		if( user != null ){
 			// Check if username match the password
 			if(user.getPassword().equals(password)){
-				// Save username and password to session
-				HttpSession session = request.getSession();
-				session.setAttribute("username", nisn);
-				session.setAttribute("password", password);
-				session.setAttribute("nama", user.getUsername());
-				session.setAttribute("nisn", user.getNisn());
-				
-				model.addAttribute("nama", session.getAttribute("nama"));
-				model.addAttribute("nisn", session.getAttribute("nisn"));
-				model.addAttribute("currenttime", TimeInfo.getCurrentTimeWithOffset());
-				return "/userview/pagewaiting";
+				if(user.getHak_akses() == 0){
+					// Save username and password to session
+					HttpSession session = request.getSession();
+					session.setAttribute("username", nisn);
+					session.setAttribute("password", password);
+					session.setAttribute("nama", user.getUsername());
+					session.setAttribute("nisn", user.getNisn());
+
+					model.addAttribute("nama", session.getAttribute("nama"));
+					model.addAttribute("nisn", session.getAttribute("nisn"));
+					model.addAttribute("currenttime", TimeInfo.getCurrentTimeWithOffset());
+					return "/userview/pagewaiting";
+				}else if(user.getHak_akses() == 1){
+					return "redirect:/admin";
+				}
 			}
 		}
 		return "/userview/login";
