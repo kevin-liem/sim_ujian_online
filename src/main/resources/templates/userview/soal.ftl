@@ -87,17 +87,17 @@
                                 </div>
                             </form>
                         </div>
-                        <ul class="pagination center-pagination" style="margin-left: 39%">
-                            <li><button class="btn btn-default" id="button_prev">Prev</button></li>
-                            <li><input type="number" name="page" id="id_soal" min="1" max="20" style="width: 63px;" ></li>
-                            <li><button class="btn btn-default" id="button_next">Next</button></li>
-                        </ul>
                     </div>
-                    <form action="" id="submit_nilai" method="post">
+                    <ul class="pagination center-pagination">
+                        <li><button class="btn btn-default" id="button_prev">Prev</button></li>
+                        <form action="" class="btn" id="submit_nilai" method="post">
                         <input type="hidden" name="nilai" id="nilai">
                         <input type="hidden" name="mapel" id="mapel">
-                        <button type="submit" class="btn btn-info" id="button_submit">submit</button>
-                    </form>
+                        <li><button type="submit" class="btn btn-info" id="button_submit">submit</button></li>
+                        </form>
+                    <#--<li><input type="number" name="page" id="id_soal" min="1" max="20" style="width: 63px;" ></li>-->
+                        <li><button class="btn btn-default" id="button_next">Next</button></li>
+                    </ul>
                 </div>
             </div>
         </div>
