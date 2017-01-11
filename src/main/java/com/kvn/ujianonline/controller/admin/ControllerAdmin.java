@@ -12,6 +12,6 @@ import org.springframework.stereotype.Controller;
 public class ControllerAdmin {
     @RequestMapping(value = "/admin")
     public String overview() {
-        return "/adminview/overview";
+        return "/admin/data-siswa";
     }
 }
