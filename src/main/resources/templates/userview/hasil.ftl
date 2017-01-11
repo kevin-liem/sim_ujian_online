@@ -62,9 +62,6 @@
                             <p style="text-align: center; font-size: 14pt;">Nilai Anda</p>
                             <p style="text-align: center; font-size: 14pt;"><strong style="font-size: 20pt;">${nilai}</strong></p>
                         </div>
-                        <div style="margin: auto;margin-left: 210px">
-                            <a href="/" class="btn btn-default">Keluar</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -102,6 +99,13 @@
     }else if(id_mapel==9){
          document.getElementById("result").innerHTML = "Ekonomi";
     }
+
+    window.setTimeout(function(){
+
+        // Move to a new location or you can do something else
+        window.location.href = "/";
+
+    }, 5000);
 </script>
 </body>
 
